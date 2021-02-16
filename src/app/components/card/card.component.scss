@@ -1,0 +1,40 @@
+@import 'index';
+
+:host {
+  width: 100%
+}
+
+.card {
+  border-radius: 5px;
+  @include box-shadow();
+
+  &__title {
+    color: $white;
+
+    i {
+      margin-right: 8px;
+    }
+
+    span {
+      font-size: 0.8rem;
+    }
+  }
+
+  &__title,
+  &__content {
+    padding: 10px;
+  }
+
+  &__title {
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+  }
+
+  &__content {
+    &-body {
+      padding: 10px 0 25px;
+    }
+  }
+}

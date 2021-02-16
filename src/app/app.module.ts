@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {
+  CardComponent,
   ToolbarComponent,
 } from './components';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CardComponent,
     ToolbarComponent,
   ],
   imports: [
