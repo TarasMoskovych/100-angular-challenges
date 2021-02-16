@@ -1,0 +1,22 @@
+app-toolbar {
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  li {
+    cursor: pointer;
+    padding: 0 10px;
+
+    &:first-child,
+    &:last-child {
+      padding-left: 0;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

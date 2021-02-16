@@ -1,0 +1,21 @@
+@import 'index';
+
+.toolbar {
+  align-items: center;
+  background-color: $blue;
+  color: $white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  @include box-shadow;
+
+  &__title {
+    @media (max-width: $tablet) {
+      margin-bottom: 15px;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    display: block;
+  }
+}
