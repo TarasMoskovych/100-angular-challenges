@@ -1,0 +1,46 @@
+@import 'index';
+
+.accordion {
+  @include box-shadow();
+
+  &__item {
+    border-bottom: 1px solid rgb(221, 221, 221);
+    padding: 10px 15px;
+
+    &:last-child {
+      border: 0;
+    }
+
+    &--opened {
+      .accordion {
+        &__title {
+          &-icon {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    &-icon {
+      transition: .3s;
+      i {
+        color: $blue;
+
+        &:hover {
+          color: darken($blue, 10);
+        }
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 15px;
+    overflow: hidden;
+  }
+}

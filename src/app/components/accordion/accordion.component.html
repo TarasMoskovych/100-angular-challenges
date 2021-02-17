@@ -1,0 +1,15 @@
+<div class="accordion" *ngIf="items.length">
+  <div *ngFor="let item of items" class="accordion__item" [class.accordion__item--opened]="item.opened">
+    <div class="accordion__title">
+      <h4 class="accordion__title-text">
+        {{ item.title }}
+      </h4>
+      <div class="accordion__title-icon" (click)="onToggle(item)">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+    <div *ngIf="item.opened" @toggle class="accordion__content">
+      {{ item.content }}
+    </div>
+  </div>
+</div>
