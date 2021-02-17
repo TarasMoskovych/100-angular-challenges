@@ -1,0 +1,27 @@
+@import 'variables';
+
+$height: 20px;
+$radius: 25px;
+
+.progress-bar {
+  background-color: $light-grey;
+  border-radius: $radius;
+  color: $white;
+  height: $height;
+  position: relative;
+
+  &__value {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+  }
+
+  &__status {
+    background-color: $blue;
+    border-radius: $radius;
+    height: $height;
+    position: absolute;
+    top: 0;
+    transition: .4s;
+  }
+}

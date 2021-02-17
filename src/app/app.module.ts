@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {
   AccordionComponent,
   CardComponent,
+  ProgressBarComponent,
   ToolbarComponent,
 } from './components';
 
@@ -14,8 +15,8 @@ import {
     AppComponent,
     AccordionComponent,
     CardComponent,
+    ProgressBarComponent,
     ToolbarComponent,
-    AccordionComponent,
   ],
   imports: [
     BrowserModule,

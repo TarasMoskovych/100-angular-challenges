@@ -8,6 +8,7 @@ import { AccordionItem } from './components';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  value = 0;
   items: AccordionItem[] = [
     {
       title: 'Title 1',
@@ -19,4 +20,8 @@ export class AppComponent {
       content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus cum repellendus nobis doloremque quod unde at fuga expedita adipisci eaque soluta cumque deserunt modi architecto a, voluptas earum? Quam, ex?',
     },
   ];
+
+  onUpdate() {
+    this.value = Math.ceil(Math.random() * 100);
+  }
 }

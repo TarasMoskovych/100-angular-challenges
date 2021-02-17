@@ -54,11 +54,6 @@ describe('AccordionComponent', () => {
     expect(panels[0].query(By.css('.accordion__content')).nativeElement.textContent).toContain(items[0].content);
   });
 
-  it('should have second panel collapsed', () => {
-    expect(panels[1].nativeElement.classList).not.toContain('accordion__item--opened');
-    expect(panels[1].query(By.css('.accordion__content'))).toBeNull();
-  });
-
   it('should expand second panel', () => {
     panels[1].query(By.css('.accordion__title-icon')).triggerEventHandler('click', null);
     fixture.detectChanges();
