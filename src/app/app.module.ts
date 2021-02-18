@@ -9,6 +9,7 @@ import {
   ProgressBarComponent,
   StarRatingsComponent,
   ToolbarComponent,
+  TopOfPageComponent,
 } from './components';
 
 @NgModule({
@@ -19,6 +20,7 @@ import {
     ProgressBarComponent,
     StarRatingsComponent,
     ToolbarComponent,
+    TopOfPageComponent,
   ],
   imports: [
     BrowserModule,
