@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <app-card title="Accordion" subtitle="Component" color="#929293">
+    <app-accordion body [items]="items"></app-accordion>
+  </app-card>
+</div>
+
+<div class="cards-wrapper">
+  <app-card title="Card" subtitle="Component" icon="fas fa-info-circle">
+    <p body>Body Content</p>
+    <p footer>Footer Content</p>
+  </app-card>
+
+  <app-card title="Title" subtitle="Subtitle" color="#ff6058">
+    <p body>Body Content</p>
+    <p footer>Footer Content</p>
+  </app-card>
+</div>
+
+<div class="wrapper">
+  <app-card title="Progress Bar" subtitle="Component" color="#929293">
+    <ng-container body>
+      <app-progress-bar [value]="value"></app-progress-bar>
+      <br>
+      <button (click)="onUpdate()">Update</button>
+    </ng-container>
+  </app-card>
+</div>
+
+<div class="wrapper">
+  <app-card title="Star Ratings" subtitle="Component" color="#929293">
+    <app-star-ratings body [value]="3.5"></app-star-ratings>
+  </app-card>
+</div>

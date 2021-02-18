@@ -24,9 +24,4 @@ describe('AppComponent', () => {
   it('should create the app', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should update value', () => {
-    component.onUpdate();
-    expect(component.value).toBeTruthy();
-  });
 });

@@ -1,3 +1,5 @@
+@import 'variables';
+
 app-toolbar {
   ul {
     display: flex;
@@ -15,22 +17,25 @@ app-toolbar {
       padding-left: 0;
     }
 
+    &.active,
     &:hover {
-      text-decoration: underline;
+      a:after {
+        width: 100%;
+      }
     }
-  }
-}
 
-.wrapper {
-  padding: 10px;
-}
+    a {
+      color: $white;
+      text-decoration: none;
 
-.cards-wrapper {
-  display: flex;
-  padding: 5px;
-
-  app-card {
-    padding-left: 5px;
-    padding-right: 5px;
+      &::after {
+        background: $white;
+        content: '';
+        display: block;
+        height: 1.5px;
+        transition: .3s;
+        width: 0;
+      }
+    }
   }
 }

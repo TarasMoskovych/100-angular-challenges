@@ -2,29 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
-import {
-  AccordionComponent,
-  CardComponent,
-  ProgressBarComponent,
-  StarRatingsComponent,
-  ToolbarComponent,
-  TopOfPageComponent,
-} from './components';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AccordionComponent,
-    CardComponent,
-    ProgressBarComponent,
-    StarRatingsComponent,
-    ToolbarComponent,
-    TopOfPageComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

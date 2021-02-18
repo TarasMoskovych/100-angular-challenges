@@ -1,0 +1,13 @@
+.wrapper {
+  padding: 10px;
+}
+
+.cards-wrapper {
+  display: flex;
+  padding: 5px;
+
+  app-card {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
