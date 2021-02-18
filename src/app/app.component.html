@@ -37,11 +37,17 @@
 </div>
 
 <div class="wrapper">
-  <app-card title="Progress Bar" subtitle="Component" color="#393939">
+  <app-card title="Progress Bar" subtitle="Component" color="#929293">
     <ng-container body>
       <app-progress-bar [value]="value"></app-progress-bar>
       <br>
       <button (click)="onUpdate()">Update</button>
     </ng-container>
+  </app-card>
+</div>
+
+<div class="wrapper">
+  <app-card title="Star Ratings" subtitle="Component" color="#929293">
+    <app-star-ratings body [value]="3.5"></app-star-ratings>
   </app-card>
 </div>

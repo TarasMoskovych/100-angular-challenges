@@ -7,6 +7,7 @@ import {
   AccordionComponent,
   CardComponent,
   ProgressBarComponent,
+  StarRatingsComponent,
   ToolbarComponent,
 } from './components';
 
@@ -16,6 +17,7 @@ import {
     AccordionComponent,
     CardComponent,
     ProgressBarComponent,
+    StarRatingsComponent,
     ToolbarComponent,
   ],
   imports: [
