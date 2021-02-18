@@ -1,6 +1,8 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PipesComponent } from './pipes.component';
+import { TruncatePipe } from '.';
 
 describe('PipesComponent', () => {
   let component: PipesComponent;
@@ -8,7 +10,11 @@ describe('PipesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PipesComponent ]
+      declarations: [
+        PipesComponent,
+        TruncatePipe,
+      ],
+      schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
   });

@@ -1,1 +1,14 @@
-<p>pipes works!</p>
+<app-card class="wrapper" title="Truncate" subtitle="Pipes" icon="fas fa-info-circle">
+  <p body>{{ 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati ab, quos laudantium,
+    dolores consectetur doloribus sint quidem saepe dignissimos dolor maxime praesentium. Quaerat
+    quod neque itaque, libero tempora voluptas nam veritatis alias repudiandae laborum quos molestias
+    nostrum ex adipisci, ipsam voluptates eveniet id. Dolorum rem consectetur, mollitia rerum saepe non
+    expedita sint inventore reprehenderit velit. Vitae ducimus inventore animi, dolorem dicta aperiam excepturi
+    nesciunt quos at deleniti pariatur debitis non! Atque laudantium autem commodi nam rerum est quaerat consequuntur
+    perspiciatis harum dicta quae adipisci ut velit sunt sapiente, aliquid facilis, praesentium, vitae libero.' | truncate }}
+  </p>
+  <p footer>{{ 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum labore, aliquam repellendus asperiores fuga
+    animi eaque obcaecati odit optio itaque iusto, non tempora velit nemo esse earum a alias facilis praesentium quod quia
+    minima, est deserunt. At quasi nisi odit ipsam, quidem cum quos culpa voluptate temporibus, iusto tempora ea.' | truncate:50 }}
+  </p>
+</app-card>
