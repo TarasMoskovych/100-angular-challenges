@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CardComponent } from './card/card.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { TopOfPageComponent } from './top-of-page/top-of-page.component';
+import {
+  CardComponent,
+  LoaderComponent,
+  ToolbarComponent,
+  TopOfPageComponent,
+} from './';
 
 @NgModule({
   declarations: [
     CardComponent,
+    LoaderComponent,
     ToolbarComponent,
     TopOfPageComponent,
   ],
@@ -16,6 +20,7 @@ import { TopOfPageComponent } from './top-of-page/top-of-page.component';
   ],
   exports: [
     CardComponent,
+    LoaderComponent,
     ToolbarComponent,
     TopOfPageComponent,
   ],

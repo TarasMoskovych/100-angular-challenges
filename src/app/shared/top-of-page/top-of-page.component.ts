@@ -8,7 +8,7 @@ import { Component, ChangeDetectionStrategy, Input, HostListener } from '@angula
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TopOfPageComponent {
-  @Input() offset = 40;
+  @Input() offset = 100;
   @HostListener('window:scroll')
   onWindowScroll() {
     this.toggleVisibility();

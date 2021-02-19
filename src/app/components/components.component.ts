@@ -8,6 +8,7 @@ import { AccordionItem } from './accordion/accordion-item.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ComponentsComponent {
+  loader = false;
   value = 0;
   items: AccordionItem[] = [
     {

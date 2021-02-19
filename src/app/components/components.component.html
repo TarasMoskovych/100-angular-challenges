@@ -3,7 +3,7 @@
 </app-card>
 
 <div class="cards-wrapper">
-  <app-card title="Card" subtitle="Component" icon="fas fa-info-circle">
+  <app-card title="Card" subtitle="Components" icon="fas fa-info-circle">
     <p body>Body Content</p>
     <p footer>Footer Content</p>
   </app-card>
@@ -14,7 +14,21 @@
   </app-card>
 </div>
 
-<app-card class="wrapper" title="Progress Bar" subtitle="Component" color="#929293">
+<div style="position: relative;">
+  <app-card class="wrapper" title="Loader" subtitle="Components" icon="fas fa-info-circle">
+    <div body>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illum quibusdam iste tenetur, quos adipisci magnam,
+      quaerat, aliquid eaque omnis maxime corporis sequi at eum consequatur. Blanditiis exercitationem magnam repellendus.
+      <app-loader [shown]="loader"></app-loader>
+    </div>
+  </app-card>
+</div>
+
+<div class="wrapper">
+  <button footer (click)="loader = !loader">{{ loader ? 'Hide' : 'Show' }} loader</button>
+</div>
+
+<app-card class="wrapper" title="Progress Bar" subtitle="Components" color="#929293">
   <ng-container body>
     <app-progress-bar [value]="value"></app-progress-bar>
     <br>
@@ -22,6 +36,6 @@
   </ng-container>
 </app-card>
 
-<app-card class="wrapper" title="Star Ratings" subtitle="Component" color="#929293">
+<app-card class="wrapper" title="Star Ratings" subtitle="Components" color="#929293">
   <app-star-ratings body [value]="3.5"></app-star-ratings>
 </app-card>
