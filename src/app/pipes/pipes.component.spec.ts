@@ -2,7 +2,10 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PipesComponent } from './pipes.component';
-import { TruncatePipe } from '.';
+import {
+  CreditCardFormatterPipe,
+  TruncatePipe,
+} from '.';
 
 describe('PipesComponent', () => {
   let component: PipesComponent;
@@ -12,6 +15,7 @@ describe('PipesComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [
         PipesComponent,
+        CreditCardFormatterPipe,
         TruncatePipe,
       ],
       schemas: [NO_ERRORS_SCHEMA],

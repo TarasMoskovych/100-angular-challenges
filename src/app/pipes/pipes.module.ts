@@ -6,13 +6,15 @@ import { PipesComponent } from './pipes.component';
 import { SharedModule } from '../shared/shared.module';
 
 import {
+  CreditCardFormatterPipe,
   TruncatePipe,
 } from './';
 
 @NgModule({
   declarations: [
     PipesComponent,
-    TruncatePipe
+    CreditCardFormatterPipe,
+    TruncatePipe,
   ],
   imports: [
     CommonModule,

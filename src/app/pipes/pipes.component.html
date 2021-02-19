@@ -1,3 +1,17 @@
+<app-card class="wrapper" title="Credit Card Formatter" subtitle="Pipes" icon="fas fa-info-circle">
+  <div body>
+    <p>
+      {{ '1111222233334444' | creditCardFormatter }}
+    </p>
+    <p>
+      {{ '11112222333344444' | creditCardFormatter }}
+    </p>
+    <p>
+      {{ '1111222233334444a' | creditCardFormatter }}
+    </p>
+  </div>
+</app-card>
+
 <app-card class="wrapper" title="Truncate" subtitle="Pipes" icon="fas fa-info-circle">
   <p body>{{ 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati ab, quos laudantium,
     dolores consectetur doloribus sint quidem saepe dignissimos dolor maxime praesentium. Quaerat
