@@ -7,7 +7,8 @@ import {
   AccordionComponent,
   CreditCardInputComponent,
   ProgressBarComponent,
-  StarRatingsComponent
+  StarRatingsComponent,
+  TwitterPostComponent,
  } from './';
 
 import { SharedModule } from '../shared/shared.module';
@@ -19,6 +20,7 @@ import { SharedModule } from '../shared/shared.module';
     CreditCardInputComponent,
     ProgressBarComponent,
     StarRatingsComponent,
+    TwitterPostComponent,
   ],
   imports: [
     CommonModule,
