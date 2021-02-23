@@ -1,4 +1,4 @@
-<app-card class="wrapper" title="Accordion" subtitle="Component" color="#929293">
+<app-card class="wrapper" title="Accordion" subtitle="Components" color="#929293">
   <app-accordion body [items]="items"></app-accordion>
 </app-card>
 
@@ -13,6 +13,14 @@
     <p footer>Footer Content</p>
   </app-card>
 </div>
+
+<app-card class="wrapper" title="Credit Card Input" subtitle="Components" color="#929293">
+  <div body>
+    <app-credit-card-input value="4916338506082832"></app-credit-card-input>
+    <br>
+    <app-credit-card-input [readonly]="true" value="3529000000001234"></app-credit-card-input>
+  </div>
+</app-card>
 
 <div style="position: relative;">
   <app-card class="wrapper" title="Loader" subtitle="Components" icon="fas fa-info-circle">

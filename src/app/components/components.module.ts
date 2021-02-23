@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { ComponentsComponent } from './components.component';
 import {
   AccordionComponent,
+  CreditCardInputComponent,
   ProgressBarComponent,
   StarRatingsComponent
  } from './';
@@ -15,6 +16,7 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     ComponentsComponent,
     AccordionComponent,
+    CreditCardInputComponent,
     ProgressBarComponent,
     StarRatingsComponent,
   ],

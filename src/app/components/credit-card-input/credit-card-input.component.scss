@@ -1,0 +1,17 @@
+.credit-card {
+  position: relative;
+
+  &__icon {
+    font-size: 1.2rem;
+    margin-left: 5px;
+    padding-left: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__input {
+    font-size: 1.05rem;
+    padding: 10px 0 10px 35px;
+  }
+}
