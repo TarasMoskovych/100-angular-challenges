@@ -6,6 +6,7 @@ import { ComponentsComponent } from './components.component';
 import {
   AccordionComponent,
   CreditCardInputComponent,
+  LinkedinPostComponent,
   ProgressBarComponent,
   StarRatingsComponent,
   TwitterPostComponent,
@@ -18,6 +19,7 @@ import { SharedModule } from '../shared/shared.module';
     ComponentsComponent,
     AccordionComponent,
     CreditCardInputComponent,
+    LinkedinPostComponent,
     ProgressBarComponent,
     StarRatingsComponent,
     TwitterPostComponent,
