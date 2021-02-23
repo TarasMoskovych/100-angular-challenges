@@ -12,6 +12,14 @@
   </div>
 </app-card>
 
+<app-card class="wrapper" title="Flatten" subtitle="Pipes" icon="fas fa-info-circle">
+  <div body>
+    <div class="item" *ngFor="let item of data | flatten">
+      {{ item }}
+    </div>
+  </div>
+</app-card>
+
 <app-card class="wrapper" title="Truncate" subtitle="Pipes" icon="fas fa-info-circle">
   <p body>{{ 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati ab, quos laudantium,
     dolores consectetur doloribus sint quidem saepe dignissimos dolor maxime praesentium. Quaerat

@@ -4,6 +4,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PipesComponent } from './pipes.component';
 import {
   CreditCardFormatterPipe,
+  FlattenPipe,
   TruncatePipe,
 } from '.';
 
@@ -16,6 +17,7 @@ describe('PipesComponent', () => {
       declarations: [
         PipesComponent,
         CreditCardFormatterPipe,
+        FlattenPipe,
         TruncatePipe,
       ],
       schemas: [NO_ERRORS_SCHEMA],

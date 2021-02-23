@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 
 import {
   CreditCardFormatterPipe,
+  FlattenPipe,
   TruncatePipe,
 } from './';
 
@@ -14,6 +15,7 @@ import {
   declarations: [
     PipesComponent,
     CreditCardFormatterPipe,
+    FlattenPipe,
     TruncatePipe,
   ],
   imports: [

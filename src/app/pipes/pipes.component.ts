@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-pipes',
@@ -6,11 +6,6 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./pipes.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PipesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class PipesComponent {
+  data = [1, 2, [3, 4], [[5, 6]]];
 }
