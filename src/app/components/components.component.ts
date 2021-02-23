@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { AccordionItem } from './accordion/accordion-item.model';
+import { LoaderType } from '../shared';
+import { AccordionItem } from './';
 
 @Component({
   selector: 'app-components',
@@ -9,6 +10,7 @@ import { AccordionItem } from './accordion/accordion-item.model';
 })
 export class ComponentsComponent {
   loader = false;
+  loaderType = LoaderType.Circular;
   value = 0;
   items: AccordionItem[] = [
     {
@@ -24,5 +26,9 @@ export class ComponentsComponent {
 
   onUpdate() {
     this.value = Math.ceil(Math.random() * 100);
+  }
+
+  onChangeLoader() {
+    this.loaderType = LoaderType[this.loaderType === LoaderType.Circular ? 'Loading' : 'Circular'];
   }
 }

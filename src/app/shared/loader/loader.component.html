@@ -1,3 +1,8 @@
 <div *ngIf="shown" class="loader">
-  <div class="loader__element"></div>
+  <ng-container [ngSwitch]="type">
+    <div *ngSwitchCase="loaderTypes.Circular" class="loader__circle"></div>
+    <div *ngSwitchDefault class="loader__text">
+      <span *ngFor="let word of text.split('')">{{ word }}</span>
+    </div>
+  </ng-container>
 </div>

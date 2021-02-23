@@ -27,13 +27,14 @@
     <div body>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illum quibusdam iste tenetur, quos adipisci magnam,
       quaerat, aliquid eaque omnis maxime corporis sequi at eum consequatur. Blanditiis exercitationem magnam repellendus.
-      <app-loader [shown]="loader"></app-loader>
+      <app-loader [shown]="loader" [type]="loaderType"></app-loader>
     </div>
   </app-card>
 </div>
 
-<div class="wrapper">
-  <button footer (click)="loader = !loader">{{ loader ? 'Hide' : 'Show' }} loader</button>
+<div footer class="wrapper">
+  <button style="margin-right: 5px;" (click)="loader = !loader">{{ loader ? 'Hide' : 'Show' }} loader</button>
+  <button class="change-loader" (click)="onChangeLoader()">Change loader</button>
 </div>
 
 <app-card class="wrapper" title="Progress Bar" subtitle="Components" color="#929293">
