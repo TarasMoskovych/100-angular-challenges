@@ -1,6 +1,26 @@
-<app-card class="wrapper" title="Accordion" subtitle="Components" color="#929293">
-  <app-accordion body [items]="items"></app-accordion>
-</app-card>
+<app-accordion class="wrapper">
+  <app-accordion-item title="Accordion" [opened]="true">
+    <ng-template>
+      <app-card title="Accordion" subtitle="Components" color="#929293">
+        <app-accordion body>
+          <app-accordion-item title="Title 1" [opened]="true">
+            <ng-template>
+              <p>Counter {{ value }}</p>
+              <button (click)="onUpdate()">Click</button>
+            </ng-template>
+          </app-accordion-item>
+          <app-accordion-item title="Title 2">
+            <ng-template>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab voluptatem et officiis, exercitationem est
+                vel? Iste expedita quas reiciendis doloribus.
+              </p>
+            </ng-template>
+          </app-accordion-item>
+        </app-accordion>
+      </app-card>
+    </ng-template>
+  </app-accordion-item>
+</app-accordion>
 
 <div class="cards-wrapper">
   <app-card title="Card" subtitle="Components" icon="fas fa-info-circle">

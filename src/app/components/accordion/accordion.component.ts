@@ -1,7 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ContentChildren, QueryList } from '@angular/core';
 
-import { AccordionItem } from './accordion-item.model';
+import { AccordionItemComponent } from './accordion-item/accordion-item.component';
 
 const ANIMATION_DURATION = 250;
 const EXPANDED = {
@@ -34,9 +34,5 @@ const COLLAPSED = {
   ]
 })
 export class AccordionComponent {
-  @Input() items: AccordionItem[] = [];
-
-  onToggle(item: AccordionItem): void {
-    item.opened = !item.opened;
-  }
+  @ContentChildren(AccordionItemComponent) items: QueryList<AccordionItemComponent>;
 }

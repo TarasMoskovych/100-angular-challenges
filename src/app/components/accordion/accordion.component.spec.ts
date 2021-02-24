@@ -1,41 +1,49 @@
-import { DebugElement } from '@angular/core';
+import { Component, DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AccordionItem } from './accordion-item.model';
+import { AccordionItemComponent } from './accordion-item/accordion-item.component';
 import { AccordionComponent } from './accordion.component';
 
-const items: AccordionItem[] = [
-  {
-    title: 'title1',
-    content: 'content1',
-    opened: true,
-  },
-  {
-    title: 'title2',
-    content: 'content2',
-  },
-];
+@Component({
+  template: `
+    <app-accordion>
+      <app-accordion-item *ngFor="let item of items; let idx = index" [title]="item.title" [opened]="item.opened">
+        <ng-template>Content {{ idx + 1 }}</ng-template>
+      </app-accordion-item>
+    </app-accordion>
+  `
+})
+class TestHostComponent {
+  items: Object[] = [
+    {
+      title: 'title1',
+      opened: true,
+    },
+    {
+      title: 'title2',
+    },
+  ];
+}
 
 describe('AccordionComponent', () => {
-  let component: AccordionComponent;
-  let fixture: ComponentFixture<AccordionComponent>;
+  let component: TestHostComponent;
+  let fixture: ComponentFixture<TestHostComponent>;
   let el: DebugElement;
   let panels: DebugElement[];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [NoopAnimationsModule],
-      declarations: [AccordionComponent],
+      declarations: [AccordionComponent, AccordionItemComponent, TestHostComponent],
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AccordionComponent);
+    fixture = TestBed.createComponent(TestHostComponent);
     component = fixture.componentInstance;
-    component.items = items;
     el = fixture.debugElement;
     fixture.detectChanges();
     panels = el.queryAll(By.css('.accordion__item'));
@@ -46,18 +54,19 @@ describe('AccordionComponent', () => {
   });
 
   it('should have two panels', () => {
-    expect(panels.length).toBe(items.length);
+    expect(panels.length).toBe(component.items.length);
   });
 
   it('should have first panel expanded', () => {
-    expect(panels[0].nativeElement.classList).toContain('accordion__item--opened');
-    expect(panels[0].query(By.css('.accordion__content')).nativeElement.textContent).toContain(items[0].content);
+    expect(panels[0].query(By.css('.accordion__title-icon')).nativeElement.classList).toContain('accordion__title-icon--opened');
+    expect(panels[0].query(By.css('.accordion__content')).nativeElement.textContent).toContain('Content 1');
   });
 
   it('should expand second panel', () => {
     panels[1].query(By.css('.accordion__title-icon')).triggerEventHandler('click', null);
     fixture.detectChanges();
 
-    expect(panels[1].query(By.css('.accordion__content')).nativeElement.textContent).toContain(items[1].content);
+    expect(panels[1].query(By.css('.accordion__title-icon')).nativeElement.classList).toContain('accordion__title-icon--opened');
+    expect(panels[1].query(By.css('.accordion__content')).nativeElement.textContent).toContain('Content 2');
   });
 });

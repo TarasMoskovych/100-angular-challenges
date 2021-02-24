@@ -10,16 +10,6 @@
     &:last-child {
       border: 0;
     }
-
-    &--opened {
-      .accordion {
-        &__title {
-          &-icon {
-            transform: rotate(180deg);
-          }
-        }
-      }
-    }
   }
 
   &__title {
@@ -35,6 +25,10 @@
         &:hover {
           color: darken($blue, 10);
         }
+      }
+
+      &--opened {
+        transform: rotate(180deg);
       }
     }
   }

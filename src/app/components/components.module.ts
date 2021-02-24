@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { ComponentsComponent } from './components.component';
 import {
   AccordionComponent,
+  AccordionItemComponent,
   CreditCardInputComponent,
   LinkedinPostComponent,
   ProgressBarComponent,
@@ -18,6 +19,7 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     ComponentsComponent,
     AccordionComponent,
+    AccordionItemComponent,
     CreditCardInputComponent,
     LinkedinPostComponent,
     ProgressBarComponent,

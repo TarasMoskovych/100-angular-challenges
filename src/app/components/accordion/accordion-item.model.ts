@@ -1,5 +1,0 @@
-export interface AccordionItem {
-  title: string;
-  content: string;
-  opened?: boolean;
-}
