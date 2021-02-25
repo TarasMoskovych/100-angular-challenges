@@ -12,6 +12,7 @@ import {
   ProgressBarComponent,
   QuoteComponent,
   StarRatingsComponent,
+  ToggleComponent,
   TwitterPostComponent,
  } from './';
 
@@ -28,6 +29,7 @@ import { SharedModule } from '../shared/shared.module';
     ProgressBarComponent,
     QuoteComponent,
     StarRatingsComponent,
+    ToggleComponent,
     TwitterPostComponent,
   ],
   imports: [

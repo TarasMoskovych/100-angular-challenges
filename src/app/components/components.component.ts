@@ -13,6 +13,7 @@ import { Quote, QuoteColors } from './';
 export class ComponentsComponent {
   @ViewChild('exampleModal') modal: ModalComponent;
 
+  checked = false;
   loader = false;
   loaderType = LoaderType.Circular;
   value = 0;

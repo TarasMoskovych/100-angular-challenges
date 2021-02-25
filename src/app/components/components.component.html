@@ -91,6 +91,11 @@
   <app-star-ratings body [value]="3.5"></app-star-ratings>
 </app-card>
 
+<app-card class="wrapper" title="Toggle" subtitle="Components">
+  <app-toggle body (check)="checked = !checked"></app-toggle>
+  <p footer>{{ checked ? 'Checked' : 'Not checked' }}</p>
+</app-card>
+
 <app-card class="wrapper" title="Twitter Post" subtitle="Components" color="#929293">
   <app-twitter-post body></app-twitter-post>
 </app-card>
