@@ -1,0 +1,30 @@
+@import 'index';
+
+.quote {
+  padding: 15px;
+  @include box-shadow();
+
+  &__text {
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    i {
+      margin-right: 8px;
+    }
+  }
+
+  &__author {
+    margin-top: 15px;
+    text-align: right;
+
+    &-name {
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    &-occupation {
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+  }
+}

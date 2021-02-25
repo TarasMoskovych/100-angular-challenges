@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy, ViewChild } from '@angular/core';
 
 import { LoaderType } from '../shared';
 import { ModalComponent } from './modal/modal.component';
+import { Quote, QuoteColors } from './';
 
 @Component({
   selector: 'app-components',
@@ -15,6 +16,12 @@ export class ComponentsComponent {
   loader = false;
   loaderType = LoaderType.Circular;
   value = 0;
+  quote: Quote = {
+    text: 'Get Good. Get Great. Get Better.',
+    author: 'Dylan C. Israel',
+    occupation: 'Software Engineer, Mentor, Educator'
+  };
+  quoteColors: QuoteColors = { background: '#E4F4E8', text: '#628E6D' };
 
   onUpdate(): void {
     this.value = Math.ceil(Math.random() * 100);

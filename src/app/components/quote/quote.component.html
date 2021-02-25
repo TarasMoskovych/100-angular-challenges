@@ -1,0 +1,10 @@
+<blockquote *ngIf="quote" class="quote" [ngStyle]="{ background: colors.background, color: colors.text }">
+  <div class="quote__text">
+    <i class="fas fa-quote-left"></i>
+    <span>{{ quote.text }}</span>
+  </div>
+  <div class="quote__author">
+    <div class="quote__author-name">{{ quote.author }}</div>
+    <div class="quote__author-occupation" *ngIf="quote.occupation as occupation">{{ occupation }}</div>
+  </div>
+</blockquote>

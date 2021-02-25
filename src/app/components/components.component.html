@@ -49,7 +49,9 @@
 <app-card class="wrapper" title="Modal" subtitle="Components">
   <div body>
     <app-modal #exampleModal body title="Modal Title" (open)="onModalOpen()">
-      <p body>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta obcaecati suscipit non dignissimos ratione ab voluptas et eum rem aliquid.</p>
+      <p body>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta obcaecati suscipit
+        non dignissimos ratione ab voluptas et eum rem aliquid.
+      </p>
       <div actions>
         <button (click)="onToggleModal()">OK</button>
       </div>
@@ -79,6 +81,10 @@
     <br>
     <button (click)="onUpdate()">Update</button>
   </ng-container>
+</app-card>
+
+<app-card class="wrapper" title="Quote" subtitle="Components">
+  <app-quote body [quote]="quote" [colors]="quoteColors"></app-quote>
 </app-card>
 
 <app-card class="wrapper" title="Star Ratings" subtitle="Components">

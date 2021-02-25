@@ -10,6 +10,7 @@ import {
   LinkedinPostComponent,
   ModalComponent,
   ProgressBarComponent,
+  QuoteComponent,
   StarRatingsComponent,
   TwitterPostComponent,
  } from './';
@@ -25,6 +26,7 @@ import { SharedModule } from '../shared/shared.module';
     LinkedinPostComponent,
     ModalComponent,
     ProgressBarComponent,
+    QuoteComponent,
     StarRatingsComponent,
     TwitterPostComponent,
   ],
