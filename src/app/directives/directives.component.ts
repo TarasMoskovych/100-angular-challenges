@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-directives',
@@ -6,11 +6,11 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./directives.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DirectivesComponent implements OnInit {
+export class DirectivesComponent {
+  counter = 0;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  onLog(e: MouseEvent): void {
+    this.counter++;
+    console.log(e);
   }
-
 }

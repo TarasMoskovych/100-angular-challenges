@@ -1,3 +1,4 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DirectivesComponent } from './directives.component';
@@ -8,7 +9,8 @@ describe('DirectivesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DirectivesComponent ]
+      declarations: [DirectivesComponent],
+      schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
   });
@@ -21,5 +23,10 @@ describe('DirectivesComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should update counter', () => {
+    component.onLog(null as any);
+    expect(component.counter).toBe(1);
   });
 });

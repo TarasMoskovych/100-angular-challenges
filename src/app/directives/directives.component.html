@@ -1,1 +1,6 @@
-<p>directives works!</p>
+<app-card class="wrapper" title="Debounce Click" subtitle="Directives" icon="fas fa-info-circle">
+  <div body>
+    <button appDebounceClick [debounceTime]="200" (debouncedClick)="onLog($event)">Increase Counter</button>
+    {{ counter }}
+  </div>
+</app-card>
