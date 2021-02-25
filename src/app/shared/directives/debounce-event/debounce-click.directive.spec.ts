@@ -5,7 +5,7 @@ import { By } from '@angular/platform-browser';
 import { DebounceClickDirective } from './debounce-click.directive';
 
 @Component({
-  template: `<button appDebounceClick (debouncedClick)="onClick()">Click</button>`
+  template: `<button appDebounceClick (debouncedEvent)="onClick()">Click</button>`
 })
 class TestHostComponent {
   onClick() {}

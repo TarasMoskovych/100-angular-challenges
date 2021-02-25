@@ -7,7 +7,12 @@ import {
   LoaderComponent,
   ToolbarComponent,
   TopOfPageComponent,
-} from './';
+} from './components';
+
+import {
+  DebounceClickDirective,
+  DebounceKeyupDirective,
+} from './directives';
 
 @NgModule({
   declarations: [
@@ -15,6 +20,8 @@ import {
     LoaderComponent,
     ToolbarComponent,
     TopOfPageComponent,
+    DebounceClickDirective,
+    DebounceKeyupDirective,
   ],
   imports: [
     CommonModule,
@@ -26,6 +33,8 @@ import {
     LoaderComponent,
     ToolbarComponent,
     TopOfPageComponent,
+    DebounceClickDirective,
+    DebounceKeyupDirective,
   ],
 })
 export class SharedModule { }

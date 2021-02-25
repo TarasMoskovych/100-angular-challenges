@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, ViewChild } from '@angular/core';
 
-import { LoaderType } from '../shared';
+import { LoaderType } from '../shared/components';
 import { ModalComponent } from './modal/modal.component';
 import { Quote, QuoteColors } from './';
 

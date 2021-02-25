@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { LoaderType } from '../shared';
+import { LoaderType } from '../shared/components';
 import { ComponentsComponent } from './components.component';
 import { ModalComponent } from './modal/modal.component';
 

@@ -33,11 +33,11 @@ describe('RichTextViewerComponent', () => {
   });
 
   it('should render html on input', () => {
-    const textarea = el.query(By.css('.rich-text-viewer__textarea')).nativeElement;
+    const textarea = el.query(By.css('.rich-text-viewer__textarea'));
     const html = '<span>Custom content</span>';
 
-    textarea.value = html;
-    textarea.dispatchEvent(new CustomEvent('input'));
+    textarea.nativeElement.value = html;
+    textarea.triggerEventHandler('debouncedEvent', null);
     fixture.detectChanges();
 
     expect(el.query(By.css('.rich-text-viewer__view div')).nativeElement.innerHTML).toBe(html);
