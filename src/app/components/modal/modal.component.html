@@ -1,0 +1,20 @@
+<div class="modal">
+  <div *ngIf="opened" @fade-overlay class="modal__overlay" (click)="closeModal()"></div>
+  <div *ngIf="opened" @fade-modal class="modal__wrapper">
+    <div class="modal__title">
+      <div class="modal__title-text">
+        {{ title }}
+      </div>
+      <div class="modal__title-close-icon" (click)="closeModal()">
+        <i class="fas fa-times"></i>
+      </div>
+    </div>
+    <div class="modal__content">
+      <ng-content select="[body]"></ng-content>
+    </div>
+    <hr class="modal__divider">
+    <div class="modal__actions">
+      <ng-content select="[actions]"></ng-content>
+    </div>
+  </div>
+</div>

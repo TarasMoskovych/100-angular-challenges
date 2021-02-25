@@ -46,6 +46,18 @@
   <app-linkedin-post body></app-linkedin-post>
 </app-card>
 
+<app-card class="wrapper" title="Modal" subtitle="Components">
+  <div body>
+    <app-modal #exampleModal body title="Modal Title" (open)="onModalOpen()">
+      <p body>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta obcaecati suscipit non dignissimos ratione ab voluptas et eum rem aliquid.</p>
+      <div actions>
+        <button (click)="onToggleModal()">OK</button>
+      </div>
+    </app-modal>
+    <button class="open-modal" (click)="onToggleModal(true)">Open Modal</button>
+  </div>
+</app-card>
+
 <div style="position: relative;">
   <app-card class="wrapper" title="Loader" subtitle="Components" icon="fas fa-info-circle">
     <div body>

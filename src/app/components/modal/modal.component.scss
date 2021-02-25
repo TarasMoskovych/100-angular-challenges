@@ -1,0 +1,76 @@
+@import 'index';
+
+.modal {
+
+  &__overlay {
+    background-color: rgba(228, 228, 228, 0.7);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  &__wrapper {
+    background: $white;
+    box-shadow: 0 0 8px rgb(0 0 0 / 30%);
+    display: block;
+    left: 0;
+    margin: auto;
+    max-width: 428px;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 1001;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+
+    &-text {
+      color: $black;
+      font-size: 1.6rem;
+      font-weight: 700;
+      padding: 20px 0 0 20px;
+    }
+
+    &-close-icon {
+      background-color: $black;
+      color: $white;
+      cursor: pointer;
+      height: 32px;
+      position: relative;
+      width: 32px;
+
+      i {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:hover {
+        i {
+          color: darken($white, 15);
+        }
+      }
+    }
+  }
+
+  &__content {
+    padding: 20px;
+  }
+
+  &__divider {
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+
+  &__actions {
+    padding: 15px 20px;
+  }
+}

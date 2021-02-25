@@ -1,5 +1,7 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewChild } from '@angular/core';
+
 import { LoaderType } from '../shared';
+import { ModalComponent } from './modal/modal.component';
 
 @Component({
   selector: 'app-components',
@@ -8,15 +10,25 @@ import { LoaderType } from '../shared';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ComponentsComponent {
+  @ViewChild('exampleModal') modal: ModalComponent;
+
   loader = false;
   loaderType = LoaderType.Circular;
   value = 0;
 
-  onUpdate() {
+  onUpdate(): void {
     this.value = Math.ceil(Math.random() * 100);
   }
 
-  onChangeLoader() {
+  onChangeLoader(): void {
     this.loaderType = LoaderType[this.loaderType === LoaderType.Circular ? 'Loading' : 'Circular'];
+  }
+
+  onToggleModal(toggler: boolean = false): void {
+    this.modal[toggler ? 'openModal' : 'closeModal']();
+  }
+
+  onModalOpen(): void {
+    console.log('opened');
   }
 }
