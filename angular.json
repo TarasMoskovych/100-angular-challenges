@@ -49,6 +49,11 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "index": {
+                "input": "src/index.html",
+                "output": "404.html"
+              },
+              "baseHref": "/100-angular-challenges/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
