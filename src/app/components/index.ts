@@ -6,6 +6,7 @@ export * from './modal/modal.component';
 export * from './progress-bar/progress-bar.component';
 export * from './quote/quote.component';
 export * from './quote/quote.model';
+export * from './rich-text-viewer/rich-text-viewer.component';
 export * from './star-ratings/star-ratings.component';
 export * from './toggle/toggle.component';
 export * from './twitter-post/twitter-post.component';

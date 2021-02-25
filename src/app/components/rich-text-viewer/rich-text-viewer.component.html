@@ -1,0 +1,13 @@
+<div class="rich-text-viewer">
+  <textarea
+    #textarea
+    class="rich-text-viewer__textarea"
+    cols="30"
+    rows="5"
+    [value]="value.trim()"
+    (input)="onInput(textarea.value)"
+  ></textarea>
+  <div class="rich-text-viewer__view">
+    <div *ngIf="html" [innerHtml]="html"></div>
+  </div>
+</div>

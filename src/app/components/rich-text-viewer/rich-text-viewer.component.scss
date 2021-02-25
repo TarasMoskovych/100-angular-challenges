@@ -1,0 +1,26 @@
+@import 'index';
+
+.rich-text-viewer {
+  display: flex;
+  justify-content: center;
+
+  &__textarea,
+  &__view {
+    width: 100%;
+    @include box-shadow();
+  }
+
+  &__textarea {
+    border: 0;
+    height: auto;
+    margin-right: 5px;
+    outline: none;
+    padding: 10px;
+  }
+
+  &__view {
+    margin-left: 5px;
+    max-height: 500px;
+    overflow: auto;
+  }
+}

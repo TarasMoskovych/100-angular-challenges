@@ -23,6 +23,13 @@ export class ComponentsComponent {
     occupation: 'Software Engineer, Mentor, Educator'
   };
   quoteColors: QuoteColors = { background: '#E4F4E8', text: '#628E6D' };
+  richTextValue: string = `
+    <div style="background: #E8ECF4; padding: 10px; color: #4060A0;">
+      <h2>Heading</h2>
+      <p style="margin-top: 10px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+    <img style="max-width: 100%;" alt src="https://cdn-images-1.medium.com/max/1024/1*-zkpV1IfOv-1dux6ZqWBCQ.png">
+  `;
 
   onUpdate(): void {
     this.value = Math.ceil(Math.random() * 100);
