@@ -5,6 +5,7 @@ import { PipesComponent } from './pipes.component';
 import {
   CreditCardFormatterPipe,
   FlattenPipe,
+  FilterTermPipe,
   TruncatePipe,
 } from '.';
 
@@ -17,6 +18,7 @@ describe('PipesComponent', () => {
       declarations: [
         PipesComponent,
         CreditCardFormatterPipe,
+        FilterTermPipe,
         FlattenPipe,
         TruncatePipe,
       ],

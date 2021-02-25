@@ -12,6 +12,10 @@
   </div>
 </app-card>
 
+<app-card class="wrapper" title="Filter Term" subtitle="Pipes" icon="fas fa-info-circle">
+  <div body>{{ ['JavaScript', 'Java', 'TypeScript'] | filterTerm:'script' | json }}</div>
+</app-card>
+
 <app-card class="wrapper" title="Flatten" subtitle="Pipes" icon="fas fa-info-circle">
   <div body>
     <div class="item" *ngFor="let item of data | flatten">
