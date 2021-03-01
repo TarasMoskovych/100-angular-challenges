@@ -1,0 +1,4 @@
+<div class="debounce-search">
+  <input type="text" placeholder="Search" [(ngModel)]="value" (ngModelChange)="onModelChanged($event)">
+  <i *ngIf="value" class="fas fa-times" (click)="onClear()"></i>
+</div>

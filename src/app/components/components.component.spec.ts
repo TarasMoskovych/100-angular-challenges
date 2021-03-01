@@ -81,4 +81,13 @@ describe('ComponentsComponent', () => {
       expect(console.log).not.toHaveBeenCalled();
     });
   });
+
+  it('should update value onSearch', () => {
+    const value = 'Test value';
+    spyOn(console, 'log');
+    component.onSearch(value);
+
+    expect(console.log).toHaveBeenCalledOnceWith(value);
+    expect(component.search).toBe(value);
+  });
 });

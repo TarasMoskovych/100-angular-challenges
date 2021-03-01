@@ -1,0 +1,23 @@
+@import 'variables';
+
+.debounce-search {
+  position: relative;
+
+  input {
+    padding: 5px 25px 5px 5px;
+    width: 100%;
+  }
+
+  i {
+    color: $blue;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transition: .3s;
+    transform: translateY(-50%);
+
+    &:hover {
+      color: darken($blue, 15);
+    }
+  }
+}

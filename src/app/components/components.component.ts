@@ -13,6 +13,7 @@ import { Quote, QuoteColors } from './';
 export class ComponentsComponent {
   @ViewChild('exampleModal') modal: ModalComponent;
 
+  search = 'Search';
   checked = false;
   loader = false;
   loaderType = LoaderType.Circular;
@@ -45,5 +46,10 @@ export class ComponentsComponent {
 
   onModalOpen(): void {
     console.log('opened');
+  }
+
+  onSearch(value: string): void {
+    console.log(value);
+    this.search = value;
   }
 }
