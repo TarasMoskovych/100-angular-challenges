@@ -1,0 +1,64 @@
+@import 'variables';
+
+@mixin button-color($color) {
+  background-color: $color;
+
+  &:hover {
+    background-color: darken($color, 10);
+  }
+
+  &:active {
+    background-color: lighten($color, 10);
+  }
+}
+
+.counter {
+  display: flex;
+  position: relative;
+
+  &__minus,
+  &__plus {
+    border: 0;
+    color: $white;
+    cursor: pointer;
+    outline: none;
+    padding: 10px 15px;
+    transition: .3s;
+
+    &:hover {
+      color: darken($white, 10);
+    }
+  }
+
+  &__minus {
+    border-radius: 8px 0 0 8px;
+    @include button-color($red);
+  }
+
+  &__plus {
+    border-radius: 0 8px 8px 0;
+    @include button-color($green);
+  }
+
+  &__input {
+    border: 2px solid $light-grey;
+    border-left: 0;
+    border-right: 0;
+    font-size: 1.1rem;
+    outline: none;
+    padding: 8px;
+    transition: .3s;
+    width: 100%;
+    -moz-appearance: textfield;
+
+    &:focus {
+      border-color: $blue;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}

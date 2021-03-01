@@ -1,0 +1,16 @@
+<div class="counter">
+  <button class="counter__minus" (click)="onDecrease()">
+    <i class="fas fa-minus"></i>
+  </button>
+  <input
+    class="counter__input"
+    type="number"
+    (ngModelChange)="onChange($event)"
+    [(ngModel)]="value"
+    [min]="min"
+    [max]="max"
+  />
+  <button class="counter__plus" (click)="onIncrease()">
+    <i class="fas fa-plus"></i>
+  </button>
+</div>
