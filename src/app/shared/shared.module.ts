@@ -14,6 +14,10 @@ import {
   DebounceKeyupDirective,
 } from './directives';
 
+import {
+  FilterTermPipe,
+} from './pipes';
+
 @NgModule({
   declarations: [
     CardComponent,
@@ -22,6 +26,7 @@ import {
     TopOfPageComponent,
     DebounceClickDirective,
     DebounceKeyupDirective,
+    FilterTermPipe,
   ],
   imports: [
     CommonModule,
@@ -35,6 +40,7 @@ import {
     TopOfPageComponent,
     DebounceClickDirective,
     DebounceKeyupDirective,
+    FilterTermPipe,
   ],
 })
 export class SharedModule { }

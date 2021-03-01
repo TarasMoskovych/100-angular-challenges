@@ -1,0 +1,33 @@
+@import 'index';
+
+.search-list {
+  position: relative;
+
+  ul {
+    background-color: $white;
+    list-style-type: none;
+    max-height: 200px;
+    overflow: auto;
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+    @include box-shadow();
+
+    &:not(:empty) {
+      margin-top: 10px;
+    }
+
+    li {
+      cursor: pointer;
+      padding: 5px;
+      margin: 10px;
+      transition: .3s;
+      @include box-shadow();
+
+      &:hover {
+        background-color: $blue;
+        color: $white;
+      }
+    }
+  }
+}

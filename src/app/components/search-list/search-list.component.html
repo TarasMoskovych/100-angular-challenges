@@ -1,0 +1,13 @@
+<div class="search-list">
+  <app-debounce-search [value]="search" (search)="onSearchSelect($event, true)"></app-debounce-search>
+  <ul *ngIf="search.length && showResuts">
+    <ng-container *ngIf="values | filterTerm:search as filteredValues">
+      <li *ngFor="let value of filteredValues" (click)="onSearchSelect(value)">
+        {{ value }}
+      </li>
+      <li *ngIf="!filteredValues.length">
+        No results found
+      </li>
+    </ng-container>
+  </ul>
+</div>

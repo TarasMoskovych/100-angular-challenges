@@ -1,11 +1,11 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { SharedModule } from '../shared/shared.module';
 import { PipesComponent } from './pipes.component';
 import {
   CreditCardFormatterPipe,
   FlattenPipe,
-  FilterTermPipe,
   TruncatePipe,
 } from '.';
 
@@ -15,10 +15,10 @@ describe('PipesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [SharedModule],
       declarations: [
         PipesComponent,
         CreditCardFormatterPipe,
-        FilterTermPipe,
         FlattenPipe,
         TruncatePipe,
       ],
