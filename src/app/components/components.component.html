@@ -116,6 +116,22 @@
   <app-star-ratings body [value]="3.5"></app-star-ratings>
 </app-card>
 
+<app-card class="wrapper" title="Tabs" subtitle="Components">
+  <app-tabs body [tabs]="tabs">
+    <ng-template>
+      <app-toggle [checked]="true"></app-toggle>
+    </ng-template>
+    <ng-template>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae architecto sint aut quis quibusdam.
+        Repudiandae adipisci placeat consequuntur est magnam!
+      </p>
+    </ng-template>
+    <ng-template>
+      <app-quote body [quote]="quote" [colors]="quoteColors"></app-quote>
+    </ng-template>
+  </app-tabs>
+</app-card>
+
 <app-card class="wrapper" title="Toggle" subtitle="Components">
   <app-toggle body (check)="checked = !checked"></app-toggle>
   <p footer>{{ checked ? 'Checked' : 'Not checked' }}</p>

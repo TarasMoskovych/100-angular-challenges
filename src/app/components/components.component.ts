@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 
 import { LoaderType } from '../shared/components';
 import { ModalComponent } from './modal/modal.component';
-import { Quote, QuoteColors } from './';
+import { Quote, QuoteColors, Tab } from './';
 import { User, UsersService } from '../services';
 
 @Component({
@@ -40,6 +40,18 @@ export class ComponentsComponent implements OnInit {
     </div>
     <img style="max-width: 100%;" alt src="https://cdn-images-1.medium.com/max/1024/1*-zkpV1IfOv-1dux6ZqWBCQ.png">
   `;
+  tabs: Tab[] = [
+    {
+      title: 'Tab 1',
+    },
+    {
+      title: 'Tab 2',
+      active: true,
+    },
+    {
+      title: 'Tab 3',
+    },
+  ];
 
   onUpdate(): void {
     this.value = Math.ceil(Math.random() * 100);

@@ -1,0 +1,16 @@
+<div class="tabs" *ngIf="tabs.length">
+  <ul class="tabs__list">
+    <li
+      *ngFor="let tab of tabs"
+      class="tabs__item"
+      [class.tabs__item--active]="tab.active"
+      (click)="onTabChange(tab)"
+    >{{ tab.title }}
+    </li>
+  </ul>
+  <div class="tabs__content">
+    <ng-container *ngFor="let template of templates; let idx = index">
+      <ng-template *ngIf="activeTabIdx === idx" [ngTemplateOutlet]="template"></ng-template>
+    </ng-container>
+  </div>
+</div>

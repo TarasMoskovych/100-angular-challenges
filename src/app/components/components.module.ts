@@ -18,6 +18,7 @@ import {
   SearchListComponent,
   SimpleTableComponent,
   StarRatingsComponent,
+  TabsComponent,
   ToggleComponent,
   TwitterPostComponent,
  } from './';
@@ -41,6 +42,7 @@ import { SharedModule } from '../shared/shared.module';
     SearchListComponent,
     SimpleTableComponent,
     StarRatingsComponent,
+    TabsComponent,
     ToggleComponent,
     TwitterPostComponent,
   ],
