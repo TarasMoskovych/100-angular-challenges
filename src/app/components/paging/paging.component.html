@@ -1,0 +1,19 @@
+<ul class="paging">
+  <li>
+    <button (click)="onStepDown()" [disabled]="isFirstPage">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+  </li>
+
+  <li *ngFor="let page of pages">
+    <button [class.selected]="page === currentPage" (click)="onSelect(page)">
+      {{ page }}
+    </button>
+  </li>
+
+  <li>
+    <button (click)="onStepUp()" [disabled]="isLastPage">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </li>
+</ul>
