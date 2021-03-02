@@ -2,7 +2,9 @@ import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { of } from 'rxjs';
 
+import { testUser, UsersService } from '../services';
 import { LoaderType } from '../shared/components';
 import { ComponentsComponent } from './components.component';
 import { ModalComponent } from './modal/modal.component';
@@ -11,6 +13,7 @@ describe('ComponentsComponent', () => {
   let component: ComponentsComponent;
   let fixture: ComponentFixture<ComponentsComponent>;
   let el: DebugElement;
+  let userServiceSpy = jasmine.createSpyObj(UsersService, { get: of(testUser) });
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -18,6 +21,9 @@ describe('ComponentsComponent', () => {
       declarations: [
         ComponentsComponent,
         ModalComponent,
+      ],
+      providers: [
+        { provide: UsersService, useValue: userServiceSpy },
       ],
       schemas: [NO_ERRORS_SCHEMA],
     })

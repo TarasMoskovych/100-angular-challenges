@@ -15,7 +15,7 @@
 
   &__circle {
     animation: loader-spin 1.5s linear infinite;
-    border: 10px solid #eee;
+    border: 10px solid $light-grey2;
     border-radius: 50%;
     border-top: 10px solid $blue;
     height: 80px;

@@ -1,0 +1,14 @@
+<div class="table-wrapper" *ngIf="data?.length">
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let item of data[0] | keyvalue: order">{{ item.key }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of data; let idx = index">
+        <td *ngFor="let item of obj | keyvalue: order">{{ item.value }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,8 +1,10 @@
-import { Component, ChangeDetectionStrategy, ViewChild } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewChild, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { LoaderType } from '../shared/components';
 import { ModalComponent } from './modal/modal.component';
 import { Quote, QuoteColors } from './';
+import { User, UsersService } from '../services';
 
 @Component({
   selector: 'app-components',
@@ -10,9 +12,16 @@ import { Quote, QuoteColors } from './';
   styleUrls: ['./components.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ComponentsComponent {
+export class ComponentsComponent implements OnInit {
   @ViewChild('exampleModal') modal: ModalComponent;
 
+  constructor(private usersService: UsersService) { }
+
+  ngOnInit() {
+    this.users$ = this.usersService.get();
+  }
+
+  users$: Observable<User[]>;
   search = 'Search';
   checked = false;
   loader = false;

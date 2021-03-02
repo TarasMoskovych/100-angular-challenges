@@ -104,6 +104,10 @@
   <app-search-list body [values]="['JavaScript', 'Java', 'TypeScript']"></app-search-list>
 </app-card>
 
+<app-card class="wrapper" title="Simple Table" subtitle="Components">
+  <app-simple-table body [data]="users$ | async"></app-simple-table>
+</app-card>
+
 <app-card class="wrapper" title="Star Ratings" subtitle="Components">
   <app-star-ratings body [value]="3.5"></app-star-ratings>
 </app-card>
