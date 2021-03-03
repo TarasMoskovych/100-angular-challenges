@@ -8,4 +8,9 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 })
 export class ToolbarComponent {
   @Input() title: string = 'Default Title';
+  opened = false;
+
+  onToggle(): void {
+    this.opened = !this.opened;
+  }
 }

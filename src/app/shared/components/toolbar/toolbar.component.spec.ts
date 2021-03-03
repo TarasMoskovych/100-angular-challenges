@@ -50,4 +50,17 @@ describe('ToolbarComponent', () => {
     fixture.detectChanges();
     expect(el.queryAll(By.css('.content')).length).toBe(2);
   });
+
+  describe('content', () => {
+    it('should not be shown on mobile devices by default', () => {
+      expect(el.query(By.css('.toolbar__content')).nativeElement.classList).not.toContain('toolbar__content--shown');
+    });
+
+    it('should be shown on mobile devices on button click', () => {
+      el.query(By.css('.toolbar__menu')).triggerEventHandler('click', null);
+      fixture.detectChanges();
+
+      expect(el.query(By.css('.toolbar__content')).nativeElement.classList).toContain('toolbar__content--shown');
+    });
+  });
 });

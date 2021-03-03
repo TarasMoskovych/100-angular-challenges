@@ -6,6 +6,19 @@ app-toolbar {
     list-style: none;
     justify-content: space-between;
     width: 100%;
+
+    @media (max-width: $mobile) {
+      display: block;
+      flex-wrap: wrap;
+
+      li {
+        padding: 0 0 15px 0;
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
   }
 
   li {

@@ -1,6 +1,12 @@
 <div class="toolbar">
-  <h3 class="toolbar__title">{{ title }}</h3>
-  <div class="toolbar__content">
+  <h3 class="toolbar__title">
+    <span>{{ title }}</span>
+    <span class="toolbar__menu" (click)="onToggle()">
+      <i class="fas fa-bars" [class.hidden]="opened"></i>
+      <i class="fas fa-times" [class.hidden]="!opened"></i>
+    </span>
+  </h3>
+  <div class="toolbar__content" [class.toolbar__content--shown]="opened">
     <ng-content></ng-content>
   </div>
 </div>

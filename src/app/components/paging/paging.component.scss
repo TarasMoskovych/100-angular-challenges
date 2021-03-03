@@ -6,6 +6,13 @@
   justify-content: center;
   list-style-type: none;
 
+  &__prev,
+  &__last {
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
   button {
     background-color: $white;
     border: 0;

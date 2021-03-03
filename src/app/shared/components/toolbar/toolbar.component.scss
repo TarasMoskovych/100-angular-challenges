@@ -10,12 +10,47 @@
   @include box-shadow;
 
   &__title {
-    @media (max-width: $tablet) {
-      margin-bottom: 15px;
-    }
+    display: flex;
+    justify-content: space-between;
   }
 
   @media (max-width: $tablet) {
     display: block;
+  }
+
+  &__menu {
+    display: none;
+    margin-left: 10px;
+    position: relative;
+
+    i {
+      top: 50%;
+      transition: .3s;
+      position: absolute;
+      right: 0;
+      transform: translateY(-50%);
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      display: block;
+    }
+  }
+
+  &__content {
+    @media (max-width: $mobile) {
+      display: none;
+
+      &--shown {
+        display: block;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      margin-top: 15px;
+    }
   }
 }
