@@ -5,9 +5,14 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { DirectivesComponent } from './directives.component';
 
+import {
+  RippleDirective
+} from './';
+
 @NgModule({
   declarations: [
     DirectivesComponent,
+    RippleDirective,
   ],
   imports: [
     CommonModule,

@@ -32,3 +32,45 @@ i {
 .toolbar {
   align-items: baseline !important;
 }
+
+button {
+  background-color: $blue;
+  border: 3px solid $blue;
+  border-radius: 4px;
+  color: $white;
+  cursor: pointer;
+  font-weight: 500;
+  outline: none;
+  padding: 5px 8px;
+  transition: .3s;
+  @include box-shadow();
+
+  &:hover {
+    border: 3px solid $blue;
+    background-color: $white;
+    color: $blue;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.ripple {
+  background-position: center;
+  transition: .8s;
+
+  &:hover {
+    background: lighten($blue, 5) radial-gradient(circle, transparent 1%, $blue 1%) center/15000%;
+    border-color: transparent;
+    color: $white;
+    transition: background .8s;
+  }
+
+  &:active {
+    background-color: lighten($blue, 40);
+    background-size: 100%;
+    border-color: transparent;
+    transition: background 0s;
+  }
+}
