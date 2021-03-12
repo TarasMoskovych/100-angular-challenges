@@ -29,4 +29,29 @@
     text-align: left;
     text-transform: uppercase;
   }
+
+  .sorted {
+    cursor: pointer;
+
+    i {
+      color: $blue;
+      opacity: 0;
+      margin-left: 5px;
+      transition: .3s;
+
+      &.asc {
+        transform: rotate(180deg);
+      }
+
+      @media (max-width: $tablet) {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      i {
+        opacity: 1;
+      }
+    }
+  }
 }

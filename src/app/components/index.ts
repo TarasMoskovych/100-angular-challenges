@@ -12,6 +12,7 @@ export * from './quote/quote.model';
 export * from './rich-text-viewer/rich-text-viewer.component';
 export * from './search-list/search-list.component';
 export * from './simple-table/simple-table.component';
+export * from './sort-table/sort-table.component';
 export * from './star-ratings/star-ratings.component';
 export * from './tabs/tabs.component';
 export * from './toggle/toggle.component';

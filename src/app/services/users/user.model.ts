@@ -34,3 +34,10 @@ export const testUser = {
   phone: '1-770-736-8031 x56442',
   website: 'hildegard.org',
 } as User;
+
+export const testUser2 = {
+  name: 'Chelsey Dietrich',
+  email: 'Lucio_Hettinger@annie.caz',
+  phone: '(254)954-1289',
+  website: 'demarco.info',
+} as User;

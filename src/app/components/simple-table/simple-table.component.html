@@ -2,7 +2,13 @@
   <table>
     <thead>
       <tr>
-        <th *ngFor="let item of data[0] | keyvalue: order">{{ item.key }}</th>
+        <th
+          *ngFor="let item of data[0] | keyvalue: order"
+          [class.sorted]="sorted"
+          (click)="sorted && onSort(item.key)"
+        ><span>{{ item.key }}</span>
+          <i *ngIf="sorted" class="fas fa-arrow-down" [class.asc]="asc"></i>
+        </th>
       </tr>
     </thead>
     <tbody>

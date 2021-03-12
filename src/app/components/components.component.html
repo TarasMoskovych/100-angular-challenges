@@ -108,9 +108,15 @@
   <app-search-list body [values]="['JavaScript', 'Java', 'TypeScript']"></app-search-list>
 </app-card>
 
-<app-card class="wrapper" title="Simple Table" subtitle="Components">
-  <app-simple-table body [data]="users$ | async"></app-simple-table>
-</app-card>
+<ng-container *ngIf="users$ | async as users">
+  <app-card class="wrapper" title="Simple Table" subtitle="Components">
+    <app-simple-table body [data]="users"></app-simple-table>
+  </app-card>
+
+  <app-card class="wrapper" title="Sort Table" subtitle="Components">
+    <app-sort-table body [data]="users" sortedBy="name"></app-sort-table>
+  </app-card>
+</ng-container>
 
 <app-card class="wrapper" title="Star Ratings" subtitle="Components">
   <app-star-ratings body [value]="3.5"></app-star-ratings>
