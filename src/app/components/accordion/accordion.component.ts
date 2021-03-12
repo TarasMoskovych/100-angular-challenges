@@ -1,9 +1,9 @@
-import { animate, style, transition, trigger } from '@angular/animations';
+import { trigger } from '@angular/animations';
 import { Component, ChangeDetectionStrategy, ContentChildren, QueryList } from '@angular/core';
+import { fadeInOutAnimation } from 'src/app/shared/animations';
 
 import { AccordionItemComponent } from './accordion-item/accordion-item.component';
 
-const ANIMATION_DURATION = 250;
 const EXPANDED = {
   opacity: 1,
   height: '*',
@@ -21,16 +21,7 @@ const COLLAPSED = {
   styleUrls: ['./accordion.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
-    trigger('toggle', [
-      transition(':leave', [
-        style(EXPANDED),
-        animate(ANIMATION_DURATION, style(COLLAPSED)),
-      ]),
-      transition(':enter', [
-        style(COLLAPSED),
-        animate(ANIMATION_DURATION, style(EXPANDED)),
-      ]),
-    ]),
+    trigger('toggle', fadeInOutAnimation(250, EXPANDED, COLLAPSED)),
   ]
 })
 export class AccordionComponent {

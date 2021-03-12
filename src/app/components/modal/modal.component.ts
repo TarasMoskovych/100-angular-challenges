@@ -1,18 +1,7 @@
-import { animate, style, transition, trigger } from '@angular/animations';
+import { trigger } from '@angular/animations';
 import { Component, ChangeDetectionStrategy, Input, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
 
-const fade = (ms: number = 200) => {
-  return [
-    transition(':leave', [
-      style({ opacity: 1 }),
-      animate(ms, style({ opacity: 0 })),
-    ]),
-    transition(':enter', [
-      style({ opacity: 0 }),
-      animate(ms, style({ opacity: 1 })),
-    ]),
-  ];
-};
+import { fadeInOutAnimation } from 'src/app/shared/animations';
 
 @Component({
   selector: 'app-modal',
@@ -20,8 +9,8 @@ const fade = (ms: number = 200) => {
   styleUrls: ['./modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
-    trigger('fade-overlay', fade()),
-    trigger('fade-modal', fade(250)),
+    trigger('fade-overlay', fadeInOutAnimation()),
+    trigger('fade-modal', fadeInOutAnimation(250)),
   ],
 })
 export class ModalComponent {

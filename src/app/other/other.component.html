@@ -1,0 +1,8 @@
+<app-card class="wrapper" title="Fade In Out" subtitle="Other - Animation" icon="fas fa-info-circle">
+  <div body>
+    <h4 style="margin-bottom: 10px;" @fade *ngIf="shown">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, dignissimos?
+    </h4>
+    <button (click)="shown = !shown">Toggle</button>
+  </div>
+</app-card>
