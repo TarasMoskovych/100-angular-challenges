@@ -1,0 +1,49 @@
+<form class="email-form" [formGroup]="form" (submit)="onSubmit()">
+  <h2 class="email-form__title">Get in Touch</h2>
+  <div class="email-form__section">
+    <div
+      class="email-form__input-wrapper"
+      [class.email-form__input-wrapper--invalid]="isInvalid('name')">
+
+      <label class="email-form__label">
+        <input
+        class="email-form__input"
+        type="text"
+        placeholder="Your Name"
+        formControlName="name"
+      /><i aria-hidden="true" class="email-form__input-icon fas fa-user"></i>
+      </label>
+      <div class="email-form__message">
+        Please, enter Name.
+      </div>
+    </div>
+    <div
+      class="email-form__input-wrapper"
+      [class.email-form__input-wrapper--invalid]="isInvalid('email')">
+
+      <label class="email-form__label">
+        <input
+        class="email-form__input"
+        type="email"
+        placeholder="Your Email"
+        formControlName="email"
+      /><i aria-hidden="true" class="email-form__input-icon fas fa-envelope"></i>
+      </label>
+      <div class="email-form__message">
+        Please, enter valid Email.
+      </div>
+    </div>
+  </div>
+  <div class="email-form__input-wrapper">
+    <label class="email-form__label">
+      <textarea
+      class="email-form__input email-form__input--textarea"
+      placeholder="Your Message"
+      rows="5"
+      formControlName="message"
+    ></textarea>
+      <i aria-hidden="true" class="email-form__input-icon email-form__input-icon--top fas fa-comment"></i>
+    </label>
+  </div>
+  <button [disabled]="form.invalid">Submit</button>
+</form>

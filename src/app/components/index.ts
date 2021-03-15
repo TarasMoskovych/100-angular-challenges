@@ -3,6 +3,7 @@ export * from './accordion/accordion-item/accordion-item.component';
 export * from './counter/counter.component';
 export * from './credit-card-input/credit-card-input.component';
 export * from './debounce-search/debounce-search.component';
+export * from './email-form/email-form.component';
 export * from './linkedin-post/linkedin-post.component';
 export * from './modal/modal.component';
 export * from './paging/paging.component';

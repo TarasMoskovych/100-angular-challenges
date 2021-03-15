@@ -1,0 +1,114 @@
+@import 'index';
+
+.email-form {
+
+  &__title {
+    color: $blue;
+    margin-bottom: 15px;
+  }
+
+  &__section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+
+    @media (max-width: $tablet) {
+      display: block;
+    }
+  }
+
+  &__input,
+  &__input-wrapper {
+    width: 100%;
+  }
+
+  &__label {
+    display: block;
+    position: relative;
+    transition: .1s;
+  }
+
+  &__input {
+    border: 2px solid $light-grey;
+    border-radius: 5px;
+    outline: none;
+    padding: 10px;
+    padding-left: 30px;
+    transition: .3s;
+
+    &:focus {
+      & + i {
+        color: $blue;
+      }
+    }
+
+    &.ng-touched {
+      &.ng-valid {
+        border-color: $green;
+
+        & + i {
+          color: $green;
+        }
+      }
+    }
+
+    &-wrapper {
+      margin: 0 0 15px 0;
+
+      &--invalid {
+        .email-form {
+          &__label {
+            border-left: 5px solid $red;
+          }
+
+          &__input {
+            border-left-color: $red;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+
+            &:focus {
+              border-color: $red;
+
+              & + i {
+                color: $red;
+              }
+            }
+
+            &-icon {
+              color: $red;
+              transition: .3s;
+            }
+          }
+
+          &__message {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &-icon {
+      left: 10px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &--top {
+        top: 13px;
+        transform: none;
+      }
+    }
+
+    &:focus {
+      border-color: $blue;
+    }
+  }
+
+  &__message {
+    color: $red;
+    display: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 5px;
+  }
+}

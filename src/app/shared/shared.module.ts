@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
   CardComponent,
@@ -31,9 +31,11 @@ import {
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     FormsModule,
+    ReactiveFormsModule,
     CardComponent,
     LoaderComponent,
     ToolbarComponent,
