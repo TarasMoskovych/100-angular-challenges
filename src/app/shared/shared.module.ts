@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
   CardComponent,
+  EmailFormComponent,
   LoaderComponent,
   ToolbarComponent,
   TopOfPageComponent,
@@ -21,6 +22,7 @@ import {
 @NgModule({
   declarations: [
     CardComponent,
+    EmailFormComponent,
     LoaderComponent,
     ToolbarComponent,
     TopOfPageComponent,
@@ -37,6 +39,7 @@ import {
     FormsModule,
     ReactiveFormsModule,
     CardComponent,
+    EmailFormComponent,
     LoaderComponent,
     ToolbarComponent,
     TopOfPageComponent,

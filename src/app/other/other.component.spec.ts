@@ -26,4 +26,17 @@ describe('OtherComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call reset', () => {
+    const spy = {
+      form: {
+        reset: () => null,
+      },
+    } as any;
+
+    spyOn(spy.form, 'reset');
+
+    component.onSubmit(spy);
+    expect(spy.form.reset).toHaveBeenCalled();
+  });
 });

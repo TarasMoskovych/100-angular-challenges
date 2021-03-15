@@ -1,3 +1,7 @@
+<app-card class="wrapper" title="Form Dirty" subtitle="Other - Guard" icon="fas fa-info-circle">
+  <app-email-form body (formSubmit)="onSubmit($event)"></app-email-form>
+</app-card>
+
 <app-card class="wrapper" title="Fade In Out" subtitle="Other - Animation" icon="fas fa-info-circle">
   <div body>
     <h4 style="margin-bottom: 10px;" @fade *ngIf="shown">

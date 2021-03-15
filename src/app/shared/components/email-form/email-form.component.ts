@@ -8,7 +8,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmailFormComponent implements OnInit {
-  @Output() submit = new EventEmitter();
+  @Output() formSubmit = new EventEmitter();
   form: FormGroup;
 
   constructor(private fb: FormBuilder) { }
@@ -18,7 +18,7 @@ export class EmailFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.submit.emit(this.form.value);
+    this.formSubmit.emit({ values: this.form.value, form: this.form });
   }
 
   isInvalid(control: string): boolean {

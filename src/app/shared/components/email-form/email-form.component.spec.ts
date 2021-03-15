@@ -24,7 +24,7 @@ describe('EmailFormComponent', () => {
     el = fixture.debugElement;
     fixture.detectChanges();
 
-    spyOn(component.submit, 'emit');
+    spyOn(component.formSubmit, 'emit');
   });
 
   it('should create', () => {
@@ -61,7 +61,12 @@ describe('EmailFormComponent', () => {
     fixture.detectChanges();
     el.query(By.css('button')).nativeElement.click();
 
-    expect(component.submit.emit).toHaveBeenCalledOnceWith({ name: 'Test', email: 'abc@gmail.com', message: '' });
+    expect(component.formSubmit.emit).toHaveBeenCalledOnceWith({
+      values: {
+        name: 'Test', email: 'abc@gmail.com', message: ''
+      },
+      form: component.form,
+    });
     expect(el.query(By.css('button')).nativeElement.disabled).toBeFalse();
   });
 });

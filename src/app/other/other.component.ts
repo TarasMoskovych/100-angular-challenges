@@ -1,7 +1,9 @@
 import { trigger } from '@angular/animations';
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewChild } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 import { fadeInOutAnimation } from '../shared/animations';
+import { EmailFormComponent } from '../shared/components';
 
 @Component({
   selector: 'app-other',
@@ -13,5 +15,10 @@ import { fadeInOutAnimation } from '../shared/animations';
   ]
 })
 export class OtherComponent {
+  @ViewChild(EmailFormComponent) formComponent: EmailFormComponent;
   shown = true;
+
+  onSubmit(data: { form: FormGroup, values: Object }): void {
+    data.form.reset(data.form.value);
+  }
 }
