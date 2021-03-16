@@ -6,6 +6,7 @@ import { ComponentsComponent } from './components.component';
 import {
   AccordionComponent,
   AccordionItemComponent,
+  BannerCutOutComponent,
   ButtonToggleComponent,
   CounterComponent,
   CreditCardInputComponent,
@@ -33,6 +34,7 @@ import { SharedModule } from '../shared/shared.module';
     ComponentsComponent,
     AccordionComponent,
     AccordionItemComponent,
+    BannerCutOutComponent,
     ButtonToggleComponent,
     CounterComponent,
     CreditCardInputComponent,
