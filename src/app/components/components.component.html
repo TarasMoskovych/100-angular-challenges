@@ -124,7 +124,7 @@
       <app-toggle body [checked]="ribbonEnabled" (check)="ribbonEnabled = !ribbonEnabled"></app-toggle>
       <div style="margin-left: 15px;">
         <div *ngFor="let location of ribbonLocations">
-          <label>
+          <label *ngIf="location !== 'bottom-right'">
             <input
               type="radio"
               name="location"
