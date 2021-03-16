@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { fadeInOutAnimation } from '../shared/animations';
 import { LoaderType } from '../shared/components';
 import {
+  ButtonToggle,
   ModalComponent,
   Quote,
   QuoteColors,
@@ -61,11 +62,26 @@ export class ComponentsComponent implements OnInit {
       title: 'Tab 3',
     },
   ];
-  ribbonEnabled = false;
+  ribbonEnabled = true;
   ribbonLocations: RibbonLocation[] = Object.values(RibbonLocation);
-  ribbonLocation: RibbonLocation = RibbonLocation.TopRight;
+  ribbonLocation: RibbonLocation = RibbonLocation.BottomLeft;
   ribbonColors: RibbonType[] = Object.values(RibbonType);
   ribbonColor: RibbonType = RibbonType.Info;
+  buttons: ButtonToggle[] = [
+    {
+      id: '1',
+      text: 'Button 1',
+    },
+    {
+      active: true,
+      id: '2',
+      text: 'Button 2',
+    },
+    {
+      id: '3',
+      text: 'Button 3',
+    },
+  ];
 
   onUpdate(): void {
     this.value = Math.ceil(Math.random() * 100);

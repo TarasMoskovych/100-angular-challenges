@@ -1,0 +1,48 @@
+@import 'index';
+
+@mixin button-color($bgColor, $color) {
+  background-color: $bgColor;
+  color: $color;
+}
+
+$border: 2px solid $blue;
+
+.button-toggle {
+  display: inline-block;
+  border-radius: 4px;
+  @include box-shadow();
+
+  button {
+    box-shadow: none;
+    border-radius: 0;
+    border: $border;
+    padding: 8px 10px;
+    transform: none;
+    @include button-color($white, $black);
+
+    &.active,
+    &:hover {
+      @include button-color($blue, $white);
+    }
+
+    &:active {
+      background-color: darken($blue, 10);
+    }
+
+    &:first-child {
+      border-right: 0;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    &:last-child {
+      border-left: 0;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    &:only-child {
+      border: $border;
+    }
+  }
+}

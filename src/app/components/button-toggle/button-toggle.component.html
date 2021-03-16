@@ -1,0 +1,8 @@
+<div class="button-toggle">
+  <button
+    *ngFor="let button of buttons"
+    (click)="onClick(button)"
+    [class.active]="button.active"
+  >{{ button.text }}
+  </button>
+</div>

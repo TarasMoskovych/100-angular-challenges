@@ -6,6 +6,7 @@ import { ComponentsComponent } from './components.component';
 import {
   AccordionComponent,
   AccordionItemComponent,
+  ButtonToggleComponent,
   CounterComponent,
   CreditCardInputComponent,
   DebounceSearchComponent,
@@ -32,6 +33,7 @@ import { SharedModule } from '../shared/shared.module';
     ComponentsComponent,
     AccordionComponent,
     AccordionItemComponent,
+    ButtonToggleComponent,
     CounterComponent,
     CreditCardInputComponent,
     DebounceSearchComponent,

@@ -22,6 +22,10 @@
   </app-accordion-item>
 </app-accordion>
 
+<app-card class="wrapper" title="Button Toggle" subtitle="Components">
+  <app-button-toggle body [buttons]="buttons"></app-button-toggle>
+</app-card>
+
 <div class="cards-wrapper">
   <app-card title="Card" subtitle="Components" icon="fas fa-info-circle">
     <p body>Body Content</p>
@@ -113,7 +117,7 @@
       [configs]="{ type: ribbonColor, location: ribbonLocation }"
     ></app-ribbon>
     <div class="d-flex">
-      <app-toggle body (check)="ribbonEnabled = !ribbonEnabled"></app-toggle>
+      <app-toggle body [checked]="ribbonEnabled" (check)="ribbonEnabled = !ribbonEnabled"></app-toggle>
       <div style="margin-left: 15px;">
         <div *ngFor="let location of ribbonLocations">
           <label>
