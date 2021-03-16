@@ -6,13 +6,15 @@ import { SharedModule } from '../shared/shared.module';
 import { DirectivesComponent } from './directives.component';
 
 import {
-  RippleDirective
+  RippleDirective,
+  ScaleDirective,
 } from './';
 
 @NgModule({
   declarations: [
     DirectivesComponent,
     RippleDirective,
+    ScaleDirective,
   ],
   imports: [
     CommonModule,
