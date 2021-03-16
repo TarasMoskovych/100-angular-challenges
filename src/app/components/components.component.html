@@ -104,6 +104,46 @@
   <app-quote body [quote]="quote" [colors]="quoteColors"></app-quote>
 </app-card>
 
+<app-card class="wrapper" title="Ribbon" subtitle="Components">
+  <div body>
+    <app-ribbon
+      *ngIf="ribbonEnabled"
+      @fade
+      text="Angular"
+      [configs]="{ type: ribbonColor, location: ribbonLocation }"
+    ></app-ribbon>
+    <div class="d-flex">
+      <app-toggle body (check)="ribbonEnabled = !ribbonEnabled"></app-toggle>
+      <div style="margin-left: 15px;">
+        <div *ngFor="let location of ribbonLocations">
+          <label>
+            <input
+              type="radio"
+              name="location"
+              (change)="ribbonLocation = location"
+              [value]="location"
+              [checked]="location === ribbonLocation"
+            />{{ location | titlecase }}
+          </label>
+        </div>
+      </div>
+      <div style="margin-left: 15px;">
+        <div *ngFor="let color of ribbonColors">
+          <label>
+            <input
+              type="radio"
+              name="color"
+              (change)="ribbonColor = color"
+              [value]="color"
+              [checked]="color === ribbonColor"
+            />{{ color | titlecase }}
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-card>
+
 <app-card class="wrapper" title="Rich Text Viewer" subtitle="Components">
   <app-rich-text-viewer body [value]="richTextValue"></app-rich-text-viewer>
 </app-card>

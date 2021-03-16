@@ -13,6 +13,7 @@
   transition: .3s;
   transform: scale(0);
   width: 60px;
+  z-index: 25;
   @include box-shadow();
 
   &--visible {

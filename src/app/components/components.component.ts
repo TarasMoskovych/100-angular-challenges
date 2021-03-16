@@ -1,16 +1,25 @@
 import { Component, ChangeDetectionStrategy, ViewChild, OnInit } from '@angular/core';
+import { trigger } from '@angular/animations';
 import { Observable } from 'rxjs';
 
+import { fadeInOutAnimation } from '../shared/animations';
 import { LoaderType } from '../shared/components';
-import { ModalComponent } from './modal/modal.component';
-import { Quote, QuoteColors, Tab } from './';
+import {
+  ModalComponent,
+  Quote,
+  QuoteColors,
+  Tab,
+  RibbonLocation,
+  RibbonType,
+} from './';
 import { User, UsersService } from '../services';
 
 @Component({
   selector: 'app-components',
   templateUrl: './components.component.html',
   styleUrls: ['./components.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [trigger('fade', fadeInOutAnimation())],
 })
 export class ComponentsComponent implements OnInit {
   @ViewChild('exampleModal') modal: ModalComponent;
@@ -52,6 +61,11 @@ export class ComponentsComponent implements OnInit {
       title: 'Tab 3',
     },
   ];
+  ribbonEnabled = false;
+  ribbonLocations: RibbonLocation[] = Object.values(RibbonLocation);
+  ribbonLocation: RibbonLocation = RibbonLocation.TopRight;
+  ribbonColors: RibbonType[] = Object.values(RibbonType);
+  ribbonColor: RibbonType = RibbonType.Info;
 
   onUpdate(): void {
     this.value = Math.ceil(Math.random() * 100);

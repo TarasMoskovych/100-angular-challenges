@@ -1,0 +1,39 @@
+@import 'index';
+
+.ribbon {
+  position: fixed;
+  text-align: center;
+  transition: .3s;
+  width: 200px;
+  z-index: 20;
+
+  &--top-right {
+    top: 25px;
+    right: -50px;
+    transform: rotate(45deg);
+  }
+
+  &--top-left {
+    top: 25px;
+    left: -50px;
+    transform: rotate(-45deg);
+  }
+
+  &--bottom-left {
+    bottom: 25px;
+    left: -50px;
+    transform: rotate(45deg);
+  }
+
+  &--bottom-right {
+    bottom: 25px;
+    right: -50px;
+    transform: rotate(-45deg);
+  }
+
+  &__container {
+    color: $white;
+    padding: 10px;
+    @include box-shadow();
+  }
+}
