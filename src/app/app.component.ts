@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  toolbarOpened = false;
   links: string[] = ['components', 'directives', 'services', 'pipes', 'other'];
+
+  onToggle(opened: boolean): void {
+    this.toolbarOpened = opened;
+  }
 }

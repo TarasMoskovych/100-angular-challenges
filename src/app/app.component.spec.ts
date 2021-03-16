@@ -24,4 +24,9 @@ describe('AppComponent', () => {
   it('should create the app', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should toggle toolbar state', () => {
+    component.onToggle(true);
+    expect(component.toolbarOpened).toBeTrue();
+  });
 });

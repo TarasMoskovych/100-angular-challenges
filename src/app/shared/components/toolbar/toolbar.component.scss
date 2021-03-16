@@ -1,13 +1,23 @@
 @import 'index';
 
+:host {
+  background-color: $blue;
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  @include box-shadow;
+}
+
 .toolbar {
   align-items: center;
-  background-color: $blue;
   color: $white;
   display: flex;
   justify-content: space-between;
   padding: 15px;
-  @include box-shadow;
+  margin: auto;
+  max-width: $max-width;
 
   &__title {
     display: flex;

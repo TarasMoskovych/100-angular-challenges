@@ -6,7 +6,7 @@ import { ToolbarComponent } from './toolbar.component';
 
 @Component({
   template: `
-    <app-toolbar [title]="title">
+    <app-toolbar [title]="title" (toggle)="onToggle($event)">
       <p class="content">Custom content1</p>
       <p class="content">Custom content2</p>
     </app-toolbar>
@@ -14,6 +14,8 @@ import { ToolbarComponent } from './toolbar.component';
 })
 class TestHostComponent {
   title = 'Custom title';
+
+  onToggle(toggler: boolean) {}
 }
 
 describe('ToolbarComponent', () => {
@@ -52,6 +54,10 @@ describe('ToolbarComponent', () => {
   });
 
   describe('content', () => {
+    beforeEach(() => {
+      spyOn(component, 'onToggle');
+    });
+
     it('should not be shown on mobile devices by default', () => {
       expect(el.query(By.css('.toolbar__content')).nativeElement.classList).not.toContain('toolbar__content--shown');
     });
@@ -61,6 +67,7 @@ describe('ToolbarComponent', () => {
       fixture.detectChanges();
 
       expect(el.query(By.css('.toolbar__content')).nativeElement.classList).toContain('toolbar__content--shown');
+      expect(component.onToggle).toHaveBeenCalledOnceWith(true);
     });
   });
 });

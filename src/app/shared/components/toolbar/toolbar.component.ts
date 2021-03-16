@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,9 +8,11 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 })
 export class ToolbarComponent {
   @Input() title: string = 'Default Title';
+  @Output() toggle = new EventEmitter<boolean>();
   opened = false;
 
   onToggle(): void {
     this.opened = !this.opened;
+    this.toggle.emit(this.opened);
   }
 }
