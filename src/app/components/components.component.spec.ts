@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { of } from 'rxjs';
 
-import { testUser, UsersService } from '../services';
+import { SnackbarService, testUser, UsersService } from '../services';
 import { LoaderType } from '../shared/components';
 import { ComponentsComponent } from './components.component';
 import { ModalComponent } from './modal/modal.component';
@@ -13,7 +13,8 @@ describe('ComponentsComponent', () => {
   let component: ComponentsComponent;
   let fixture: ComponentFixture<ComponentsComponent>;
   let el: DebugElement;
-  let userServiceSpy = jasmine.createSpyObj(UsersService, { get: of(testUser) });
+  let snackbarServiceSpy = jasmine.createSpyObj('SnackbarService', ['show']);
+  let userServiceSpy = jasmine.createSpyObj('UsersService', { get: of(testUser) });
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -23,6 +24,7 @@ describe('ComponentsComponent', () => {
         ModalComponent,
       ],
       providers: [
+        { provide: SnackbarService, useValue: snackbarServiceSpy },
         { provide: UsersService, useValue: userServiceSpy },
       ],
       schemas: [NO_ERRORS_SCHEMA],
@@ -95,5 +97,10 @@ describe('ComponentsComponent', () => {
 
     expect(console.log).toHaveBeenCalledOnceWith(value);
     expect(component.search).toBe(value);
+  });
+
+  it('should show snackbar', () => {
+    component.onShowSnackBar();
+    expect(snackbarServiceSpy.show).toHaveBeenCalledOnceWith('Custom message - 1');
   });
 });

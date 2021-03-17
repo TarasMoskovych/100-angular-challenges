@@ -13,7 +13,7 @@ import {
   RibbonLocation,
   RibbonType,
 } from './';
-import { User, UsersService } from '../services';
+import { SnackbarService, User, UsersService } from '../services';
 
 @Component({
   selector: 'app-components',
@@ -25,7 +25,10 @@ import { User, UsersService } from '../services';
 export class ComponentsComponent implements OnInit {
   @ViewChild('exampleModal') modal: ModalComponent;
 
-  constructor(private usersService: UsersService) { }
+  constructor(
+    private snackbarService: SnackbarService,
+    private usersService: UsersService,
+  ) { }
 
   ngOnInit() {
     this.users$ = this.usersService.get();
@@ -34,15 +37,18 @@ export class ComponentsComponent implements OnInit {
   users$: Observable<User[]>;
   search = 'Search';
   checked = false;
+  value = 0;
+
   loader = false;
   loaderType = LoaderType.Circular;
-  value = 0;
+
   quote: Quote = {
     text: 'Get Good. Get Great. Get Better.',
     author: 'Dylan C. Israel',
     occupation: 'Software Engineer, Mentor, Educator'
   };
   quoteColors: QuoteColors = { background: '#E4F4E8', text: '#628E6D' };
+
   richTextValue: string = `
     <div style="background: #E8ECF4; padding: 10px; color: #4060A0;">
       <h2>Heading</h2>
@@ -50,6 +56,7 @@ export class ComponentsComponent implements OnInit {
     </div>
     <img style="max-width: 100%;" alt src="https://cdn-images-1.medium.com/max/1024/1*-zkpV1IfOv-1dux6ZqWBCQ.png">
   `;
+
   tabs: Tab[] = [
     {
       title: 'Tab 1',
@@ -62,11 +69,13 @@ export class ComponentsComponent implements OnInit {
       title: 'Tab 3',
     },
   ];
+
   ribbonEnabled = true;
   ribbonLocations: RibbonLocation[] = Object.values(RibbonLocation);
   ribbonLocation: RibbonLocation = RibbonLocation.BottomLeft;
   ribbonColors: RibbonType[] = Object.values(RibbonType);
   ribbonColor: RibbonType = RibbonType.Info;
+
   buttons: ButtonToggle[] = [
     {
       id: '1',
@@ -82,6 +91,8 @@ export class ComponentsComponent implements OnInit {
       text: 'Button 3',
     },
   ];
+
+  counter = 1;
 
   onUpdate(): void {
     this.value = Math.ceil(Math.random() * 100);
@@ -102,5 +113,9 @@ export class ComponentsComponent implements OnInit {
   onSearch(value: string): void {
     console.log(value);
     this.search = value;
+  }
+
+  onShowSnackBar(): void {
+    this.snackbarService.show(`Custom message - ${this.counter++}`);
   }
 }

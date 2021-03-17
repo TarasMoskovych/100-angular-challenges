@@ -1,0 +1,16 @@
+@import 'index';
+
+.snackbar {
+  margin-bottom: 15px;
+  text-align: center;
+
+  &__container {
+    background-color: $background-color;
+    border-radius: 4px;
+    color: darken($white, 15);
+    display: inline-block;
+    font-size: 0.95rem;
+    padding: 10px 20px;
+    @include box-shadow();
+  }
+}

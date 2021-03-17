@@ -85,3 +85,9 @@ button {
 .d-flex {
   display: flex;
 }
+
+.snackbar-wrapper {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
