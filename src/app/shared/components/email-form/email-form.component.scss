@@ -90,8 +90,7 @@
     &-icon {
       left: 10px;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      @include transformY();
 
       &--top {
         top: 13px;

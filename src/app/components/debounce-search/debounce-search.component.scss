@@ -1,4 +1,4 @@
-@import 'variables';
+@import 'index';
 
 .debounce-search {
   position: relative;
@@ -12,9 +12,8 @@
     color: $blue;
     position: absolute;
     right: 10px;
-    top: 50%;
     transition: .3s;
-    transform: translateY(-50%);
+    @include transformY();
 
     &:hover {
       color: darken($blue, 15);

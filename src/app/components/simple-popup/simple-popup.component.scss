@@ -1,0 +1,58 @@
+@import 'index';
+
+:host {
+  display: block;
+}
+
+.simple-popup {
+  display: inline-block;
+  position: relative;
+
+  &__text {
+    background-color: $black;
+    border-radius: 4px;
+    color: $white;
+    display: inline-block;
+    font-size: 0.9rem;
+    padding: 10px;
+    position: absolute;
+    white-space: nowrap;
+    @include box-shadow();
+
+    @media (max-width: $mobile) {
+      white-space: normal;
+    }
+
+    &::after {
+      border: 5px solid transparent;
+      content: '';
+      position: absolute;
+    }
+  }
+
+  &.right {
+    .simple-popup__text {
+      left: calc(100% + 10px);
+      @include transformY();
+
+      &:after {
+        border-right-color: $black;
+        right: 100%;
+        @include transformY();
+      }
+    }
+  }
+
+  &.top {
+    .simple-popup__text {
+      bottom: calc(100% + 10px);
+      @include transformX();
+
+      &:after {
+        border-top-color: $black;
+        top: 100%;
+        @include transformX();
+      }
+    }
+  }
+}

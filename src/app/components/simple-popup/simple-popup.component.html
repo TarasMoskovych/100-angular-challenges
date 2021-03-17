@@ -1,0 +1,11 @@
+<div class="simple-popup {{ placement }}">
+  <div
+    (click)="onOpenPopup()"
+    (mouseover)="onTogglePopup(true)"
+    (mouseleave)="onTogglePopup(false)"
+  ><ng-content></ng-content>
+  </div>
+  <div @fade class="simple-popup__text" *ngIf="showPopup">
+    {{ text }}
+  </div>
+</div>

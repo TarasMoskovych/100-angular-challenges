@@ -160,6 +160,17 @@
   <app-search-list body [values]="['JavaScript', 'Java', 'TypeScript']"></app-search-list>
 </app-card>
 
+<app-card class="wrapper" [title]="'Simple Popup'" subtitle="Components">
+  <div body>
+    <app-simple-popup>
+      <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hover me!</span>
+    </app-simple-popup>
+    <app-simple-popup text="Custom popup text" placement="right" style="margin-top: 15px;">
+      <app-star-ratings [value]="4"></app-star-ratings>
+    </app-simple-popup>
+  </div>
+</app-card>
+
 <ng-container *ngIf="users$ | async as users">
   <app-card class="wrapper" title="Simple Table" subtitle="Components">
     <app-simple-table body [data]="users"></app-simple-table>

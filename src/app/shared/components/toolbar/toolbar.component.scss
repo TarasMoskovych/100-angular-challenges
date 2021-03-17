@@ -34,11 +34,10 @@
     position: relative;
 
     i {
-      top: 50%;
       transition: .3s;
       position: absolute;
       right: 0;
-      transform: translateY(-50%);
+      @include transformY();
 
       &.hidden {
         opacity: 0;

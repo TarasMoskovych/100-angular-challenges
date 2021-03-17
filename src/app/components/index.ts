@@ -14,6 +14,7 @@ export * from './quote/quote.model';
 export * from './ribbon/ribbon.component';
 export * from './rich-text-viewer/rich-text-viewer.component';
 export * from './search-list/search-list.component';
+export * from './simple-popup/simple-popup.component';
 export * from './simple-table/simple-table.component';
 export * from './snackbar/snackbar.component';
 export * from './sort-table/sort-table.component';
