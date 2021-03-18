@@ -13,4 +13,13 @@
     padding: 10px 20px;
     @include box-shadow();
   }
+
+  &__close-btn {
+    margin-left: 15px;
+
+    &:hover {
+      background-color: darken($blue, 20);
+      color: $white;
+    }
+  }
 }

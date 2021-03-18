@@ -115,7 +115,11 @@ export class ComponentsComponent implements OnInit {
     this.search = value;
   }
 
-  onShowSnackBar(): void {
-    this.snackbarService.show(`Custom message - ${this.counter++}`);
+  onShowSnackBar(autoclose: boolean): void {
+    this.snackbarService.show(`Custom message - ${this.counter++}`, autoclose);
+  }
+
+  onCountDownFinish(): void {
+    this.snackbarService.show('Happy New 2022 Year!', false);
   }
 }

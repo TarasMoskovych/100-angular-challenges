@@ -2,6 +2,7 @@ export * from './accordion/accordion.component';
 export * from './accordion/accordion-item/accordion-item.component';
 export * from './banner-cut-out/banner-cut-out.component';
 export * from './button-toggle/button-toggle.component';
+export * from './countdown-timer/countdown-timer.component';
 export * from './counter/counter.component';
 export * from './credit-card-input/credit-card-input.component';
 export * from './debounce-search/debounce-search.component';

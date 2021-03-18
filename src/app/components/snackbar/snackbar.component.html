@@ -1,5 +1,11 @@
 <div *ngIf="shown" class="snackbar" @fade>
   <div class="snackbar__container">
     {{ message }}
+    <button
+      *ngIf="!autoclose"
+      class="snackbar__close-btn"
+      (click)="close()"
+    >Close
+    </button>
   </div>
 </div>

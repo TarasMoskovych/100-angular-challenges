@@ -17,11 +17,11 @@ export class SnackbarService {
     private injector: Injector,
   ) { }
 
-  show(message: string = 'Default message', ms = 3000): SnackbarComponent {
-    return this.appendComponent(message, ms);
+  show(message: string = 'Default message', autoclose = true, ms = 3000): SnackbarComponent {
+    return this.appendComponent(message, autoclose, ms);
   }
 
-  private appendComponent(message: string, ms: number): SnackbarComponent {
+  private appendComponent(message: string, autoclose: boolean, ms: number): SnackbarComponent {
     // 1. Create a component reference from the component
     let componentRef = this.componentFactoryResolver
       .resolveComponentFactory(SnackbarComponent)
@@ -32,6 +32,7 @@ export class SnackbarService {
     // Set inputs
     instance.message = message;
     instance.ms = ms;
+    instance.autoclose = autoclose;
 
     // 2. Attach incoming component to the appRef so that it's inside the ng component tree
     this.appRef.attachView(componentRef.hostView);

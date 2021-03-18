@@ -99,8 +99,13 @@ describe('ComponentsComponent', () => {
     expect(component.search).toBe(value);
   });
 
-  it('should show snackbar', () => {
-    component.onShowSnackBar();
-    expect(snackbarServiceSpy.show).toHaveBeenCalledOnceWith('Custom message - 1');
+  it('should show snackbar "onShowSnackBar" event', () => {
+    component.onShowSnackBar(true);
+    expect(snackbarServiceSpy.show).toHaveBeenCalled();
+  });
+
+  it('should show snackbar "onCountDownFinish" event', () => {
+    component.onCountDownFinish();
+    expect(snackbarServiceSpy.show).toHaveBeenCalled();
   });
 });

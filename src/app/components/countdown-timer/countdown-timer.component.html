@@ -1,0 +1,11 @@
+<div class="countdown-timer">
+  <h2 class="countdown-timer__title">
+    {{ countDownTime | date:'medium' }}
+  </h2>
+  <div class="countdown-timer__wrapper">
+    <div *ngFor="let data of date | keyvalue" class="countdown-timer__time">
+      <h2>{{ data.value }}</h2>
+      <p>{{ data.key }}</p>
+    </div>
+  </div>
+</div>

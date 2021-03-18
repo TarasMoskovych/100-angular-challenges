@@ -1,0 +1,43 @@
+@import 'index';
+
+:host {
+  display: block;
+  text-align: center;
+}
+
+.countdown-timer {
+  display: inline-block;
+  margin: auto;
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__wrapper {
+    background-color: $blue;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    @include box-shadow();
+
+    @media (max-width: $tablet) {
+      display: block;
+    }
+  }
+
+  &__time {
+    background-color: $white;
+    border-radius: 4px;
+    color: $black;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 90px;
+    @include box-shadow();
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}

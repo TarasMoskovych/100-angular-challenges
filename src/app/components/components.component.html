@@ -42,6 +42,10 @@
   </app-card>
 </div>
 
+<app-card class="wrapper" title="Countdown Timer" subtitle="Components">
+  <app-countdown-timer body time="Jan 01 2022 00:00:00" (finish)="onCountDownFinish()"></app-countdown-timer>
+</app-card>
+
 <app-card class="wrapper" title="Counter" subtitle="Components">
   <app-counter body></app-counter>
 </app-card>
@@ -182,7 +186,10 @@
 </ng-container>
 
 <app-card class="wrapper" title="Snackbar" subtitle="Components">
-  <button body (click)="onShowSnackBar()">Show Snackbar</button>
+  <div body>
+    <button (click)="onShowSnackBar(true)" style="margin-right: 5px;">With autoclose</button>
+    <button (click)="onShowSnackBar(false)">With close button</button>
+  </div>
 </app-card>
 
 <app-card class="wrapper" title="Star Ratings" subtitle="Components">

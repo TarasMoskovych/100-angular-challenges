@@ -26,13 +26,20 @@ const COLLAPSED = {
 export class SnackbarComponent implements OnInit {
   @Input() message: string = 'Default message';
   @Input() ms: number = 3000;
+  @Input() autoclose: boolean = true;
   @Output() afterClosed = new EventEmitter<void>();
   shown = true;
 
   constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
-    this.onClose();
+    this.autoclose && this.onClose();
+  }
+
+  close(): void {
+    this.shown = false;
+    this.cdr.markForCheck();
+    this.afterClosed.emit();
   }
 
   private onClose(): void {
@@ -40,10 +47,6 @@ export class SnackbarComponent implements OnInit {
       .pipe(
         delay(this.ms),
         take(1),
-      ).subscribe(() => {
-        this.shown = false;
-        this.cdr.markForCheck();
-        this.afterClosed.emit();
-      });
+      ).subscribe(() => this.close());
   }
 }

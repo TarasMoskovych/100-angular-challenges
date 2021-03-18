@@ -22,7 +22,6 @@ describe('SnackbarComponent', () => {
     fixture = TestBed.createComponent(SnackbarComponent);
     component = fixture.componentInstance;
     el = fixture.debugElement;
-    fixture.detectChanges();
 
     spyOn(component.afterClosed, 'emit');
   });
@@ -32,10 +31,13 @@ describe('SnackbarComponent', () => {
   });
 
   it('should be shown by default', () => {
+    fixture.detectChanges();
     expect(el.query(By.css('.snackbar__container')).nativeElement.textContent).toContain(component.message);
   });
 
   it('should be hidden after 3s and emit "afterClosed"', waitForAsync(() => {
+    fixture.detectChanges();
+
     fixture.whenStable().then(() => {
       fixture.detectChanges();
 
@@ -43,4 +45,12 @@ describe('SnackbarComponent', () => {
       expect(component.afterClosed.emit).toHaveBeenCalledTimes(1);
     });
   }));
+
+  it('should emit "afterClosed" on click', () => {
+    component.autoclose = false;
+    fixture.detectChanges();
+
+    el.query(By.css('.snackbar__close-btn')).triggerEventHandler('click', null);
+    expect(component.afterClosed.emit).toHaveBeenCalledTimes(1);
+  });
 });
