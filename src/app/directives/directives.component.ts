@@ -8,6 +8,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 })
 export class DirectivesComponent {
   counter = 0;
+  copy = 'Copy text';
 
   onLog(e: MouseEvent): void {
     this.counter++;

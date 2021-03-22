@@ -2,7 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { ApplicationRef, ComponentFactoryResolver, EmbeddedViewRef, Inject, Injectable, Injector } from '@angular/core';
 import { delay, take } from 'rxjs/operators';
 
-import { SnackbarComponent } from 'src/app/components';
+import { SnackbarComponent } from 'src/app/shared/components';
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +42,7 @@ export class SnackbarService {
       .rootNodes[0] as HTMLElement;
 
     // 4. Append DOM element to the container
-    this.getContainer().prepend(domElem);
+    this.getContainer().append(domElem);
 
     // 5. Destroy after fade out
     instance.afterClosed

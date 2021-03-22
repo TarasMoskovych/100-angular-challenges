@@ -6,6 +6,7 @@ import {
   CardComponent,
   EmailFormComponent,
   LoaderComponent,
+  SnackbarComponent,
   ToolbarComponent,
   TopOfPageComponent,
 } from './components';
@@ -24,6 +25,7 @@ import {
     CardComponent,
     EmailFormComponent,
     LoaderComponent,
+    SnackbarComponent,
     ToolbarComponent,
     TopOfPageComponent,
     DebounceClickDirective,
@@ -41,6 +43,7 @@ import {
     CardComponent,
     EmailFormComponent,
     LoaderComponent,
+    SnackbarComponent,
     ToolbarComponent,
     TopOfPageComponent,
     DebounceClickDirective,

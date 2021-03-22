@@ -1,3 +1,10 @@
+<app-card class="wrapper" title="Copy" subtitle="Directives" icon="fas fa-info-circle">
+  <div body class="d-flex">
+    <input [(ngModel)]="copy" type="text" value="Copy text">
+    <button style="margin-left: 10px;" [appCopy]="copy">Copy</button>
+  </div>
+</app-card>
+
 <app-card class="wrapper" title="Debounce Click" subtitle="Directives" icon="fas fa-info-circle">
   <div body>
     <button appDebounceClick [debounceTime]="200" (debouncedEvent)="onLog($event)">Increase Counter</button>

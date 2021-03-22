@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { DirectivesComponent } from './directives.component';
 
 import {
+  CopyDirective,
   RippleDirective,
   ScaleDirective,
 } from './';
@@ -13,6 +14,7 @@ import {
 @NgModule({
   declarations: [
     DirectivesComponent,
+    CopyDirective,
     RippleDirective,
     ScaleDirective,
   ],
