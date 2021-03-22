@@ -1,0 +1,10 @@
+<footer class="footer">
+  <div class="footer__copy">
+    <a *ngFor="let social of socials" [href]="social.href" target="_blank">
+      <i aria-hidden="true" [class]="social.icon"></i>
+    </a>
+  </div>
+  <div>
+    Taras Moskovych - {{ date | date:'yyyy' }}
+  </div>
+</footer>

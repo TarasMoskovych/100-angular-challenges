@@ -54,10 +54,12 @@ app-toolbar {
 }
 
 main {
+  flex: 1;
   max-width: $max-width;
   margin: 60px auto 0;
   padding: 0 10px;
   transition: .3s;
+  width: 100%;
 
   @media (max-width: $tablet) and (min-width: $mobile) {
     margin-top: 95px;
