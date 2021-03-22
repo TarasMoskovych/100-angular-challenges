@@ -7,6 +7,7 @@ import { DirectivesComponent } from './directives.component';
 
 import {
   CopyDirective,
+  LazyLoadImageDirective,
   RippleDirective,
   ScaleDirective,
 } from './';
@@ -15,6 +16,7 @@ import {
   declarations: [
     DirectivesComponent,
     CopyDirective,
+    LazyLoadImageDirective,
     RippleDirective,
     ScaleDirective,
   ],

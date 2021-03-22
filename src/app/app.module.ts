@@ -18,7 +18,9 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [
+    { provide: 'Window', useValue: window },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

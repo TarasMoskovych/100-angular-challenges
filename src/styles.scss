@@ -90,6 +90,11 @@ input {
   display: flex;
 }
 
+.img-fluid {
+  display: block;
+  max-width: 100%;
+}
+
 .snackbar-wrapper {
   bottom: 0;
   position: fixed;
