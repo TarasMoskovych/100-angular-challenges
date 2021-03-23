@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "test": "jest --watch --coverage",
-    "test:ci": "jest",
+    "test:ci": "jest --coverage",
     "lint": "ng lint"
   },
   "private": true,
