@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{"4W87":function(e,n,r){"use strict";r.d(n,"a",function(){return o});var t=r("fXoL");let o=(()=>{class e{transform(e,n){return n?e.filter(e=>e.toLowerCase().includes(n.toLowerCase())):e}}return e.\u0275fac=function(n){return new(n||e)},e.\u0275pipe=t.Hb({name:"filterTerm",type:e,pure:!0}),e})()}}]);
