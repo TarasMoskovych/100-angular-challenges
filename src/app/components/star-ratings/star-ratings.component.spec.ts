@@ -35,17 +35,17 @@ describe('StarRatingsComponent', () => {
   });
 
   it('should render 3 full stars', () => {
-    expect(stars[0].nativeElement.classList).toMatch('fas fa-star');
-    expect(stars[1].nativeElement.classList).toMatch('fas fa-star');
-    expect(stars[2].nativeElement.classList).toMatch('fas fa-star');
+    for (let i = 0; i < 3; i++) {
+      expect(stars[i].nativeElement.classList).toContain('fa-star');
+    }
   });
 
   it('should render 1 half star', () => {
-    expect(stars[3].nativeElement.classList).toMatch('fas fa-star-half-alt');
+    expect(stars[3].nativeElement.classList).toContain('fa-star-half-alt');
   });
 
   it('should render 1 empty star', () => {
-    expect(stars[4].nativeElement.classList).toMatch('far fa-star');
+    expect(stars[4].nativeElement.classList).toContain('far');
   });
 
   describe('getState', () => {

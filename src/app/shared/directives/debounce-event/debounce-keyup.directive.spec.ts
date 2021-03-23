@@ -39,7 +39,7 @@ describe('DebounceKeyupDirective', () => {
   it('should call callback', fakeAsync(() => {
     const input = el.query(By.css('input')).nativeElement;
 
-    spyOn(component, 'onKeyup');
+    jest.spyOn(component, 'onKeyup');
     input.value = 'test';
     input.dispatchEvent(new CustomEvent('keyup'));
 

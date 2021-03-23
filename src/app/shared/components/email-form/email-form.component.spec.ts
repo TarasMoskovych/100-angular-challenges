@@ -24,7 +24,7 @@ describe('EmailFormComponent', () => {
     el = fixture.debugElement;
     fixture.detectChanges();
 
-    spyOn(component.formSubmit, 'emit');
+    jest.spyOn(component.formSubmit, 'emit');
   });
 
   it('should create', () => {
@@ -32,7 +32,7 @@ describe('EmailFormComponent', () => {
   });
 
   it('should have disabled button by default', () => {
-    expect(el.query(By.css('button')).nativeElement.disabled).toBeTrue();
+    expect(el.query(By.css('button')).nativeElement.disabled).toBeTruthy();
   });
 
   it('should have disabled button when some required field is invalid', () => {
@@ -45,9 +45,9 @@ describe('EmailFormComponent', () => {
     component.form.markAllAsTouched();
     fixture.detectChanges();
 
-    expect(component.isInvalid('name')).toBeFalse();
-    expect(component.isInvalid('email')).toBeTrue();
-    expect(el.query(By.css('button')).nativeElement.disabled).toBeTrue();
+    expect(component.isInvalid('name')).toBeFalsy();
+    expect(component.isInvalid('email')).toBeTruthy();
+    expect(el.query(By.css('button')).nativeElement.disabled).toBeTruthy();
   });
 
   it('should submit the form', () => {
@@ -61,12 +61,12 @@ describe('EmailFormComponent', () => {
     fixture.detectChanges();
     el.query(By.css('button')).nativeElement.click();
 
-    expect(component.formSubmit.emit).toHaveBeenCalledOnceWith({
+    expect(component.formSubmit.emit).toHaveBeenCalledWith({
       values: {
         name: 'Test', email: 'abc@gmail.com', message: ''
       },
       form: component.form,
     });
-    expect(el.query(By.css('button')).nativeElement.disabled).toBeFalse();
+    expect(el.query(By.css('button')).nativeElement.disabled).toBeFalsy();
   });
 });

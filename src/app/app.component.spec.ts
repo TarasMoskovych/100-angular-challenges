@@ -27,6 +27,6 @@ describe('AppComponent', () => {
 
   it('should toggle toolbar state', () => {
     component.onToggle(true);
-    expect(component.toolbarOpened).toBeTrue();
+    expect(component.toolbarOpened).toBe(true);
   });
 });

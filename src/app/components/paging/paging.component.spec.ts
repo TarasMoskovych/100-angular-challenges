@@ -21,7 +21,7 @@ describe('PagingComponent', () => {
     component = fixture.componentInstance;
     el = fixture.debugElement;
 
-    spyOn(component.pageChange, 'emit');
+    jest.spyOn(component.pageChange, 'emit');
   });
 
   it('should create', () => {
@@ -33,7 +33,7 @@ describe('PagingComponent', () => {
       fixture.detectChanges();
       component.onStepDown();
 
-      expect(el.query(By.css('button')).nativeElement.disabled).toBeTrue();
+      expect(el.query(By.css('button')).nativeElement.disabled).toBeTruthy();
       expect(component.pageChange.emit).not.toHaveBeenCalled();
     });
 
@@ -43,8 +43,8 @@ describe('PagingComponent', () => {
       el.query(By.css('button')).triggerEventHandler('click', null);
       fixture.detectChanges();
 
-      expect(el.query(By.css('button')).nativeElement.disabled).toBeTrue();
-      expect(component.pageChange.emit).toHaveBeenCalledOnceWith(1);
+      expect(el.query(By.css('button')).nativeElement.disabled).toBeTruthy();
+      expect(component.pageChange.emit).toHaveBeenCalledWith(1);
     });
 
     it('should emit "pageChange" event and change currentPage to 2', () => {
@@ -53,8 +53,8 @@ describe('PagingComponent', () => {
       el.query(By.css('button')).triggerEventHandler('click', null);
       fixture.detectChanges();
 
-      expect(el.query(By.css('button')).nativeElement.disabled).toBeFalse();
-      expect(component.pageChange.emit).toHaveBeenCalledOnceWith(2);
+      expect(el.query(By.css('button')).nativeElement.disabled).toBeFalsy();
+      expect(component.pageChange.emit).toHaveBeenCalledWith(2);
     });
   });
 
@@ -64,7 +64,7 @@ describe('PagingComponent', () => {
       fixture.detectChanges();
       component.onStepUp();
 
-      expect(el.query(By.css('li:last-child button')).nativeElement.disabled).toBeTrue();
+      expect(el.query(By.css('li:last-child button')).nativeElement.disabled).toBeTruthy();
       expect(component.pageChange.emit).not.toHaveBeenCalled();
     });
 
@@ -74,8 +74,8 @@ describe('PagingComponent', () => {
       el.query(By.css('li:last-child button')).triggerEventHandler('click', null);
       fixture.detectChanges();
 
-      expect(el.query(By.css('li:last-child button')).nativeElement.disabled).toBeTrue();
-      expect(component.pageChange.emit).toHaveBeenCalledOnceWith(5);
+      expect(el.query(By.css('li:last-child button')).nativeElement.disabled).toBeTruthy();
+      expect(component.pageChange.emit).toHaveBeenCalledWith(5);
     });
 
     it('should emit "pageChange" event and change currentPage to 4', () => {
@@ -84,8 +84,8 @@ describe('PagingComponent', () => {
       el.query(By.css('li:last-child button')).triggerEventHandler('click', null);
       fixture.detectChanges();
 
-      expect(el.query(By.css('li:last-child button')).nativeElement.disabled).toBeFalse();
-      expect(component.pageChange.emit).toHaveBeenCalledOnceWith(4);
+      expect(el.query(By.css('li:last-child button')).nativeElement.disabled).toBeFalsy();
+      expect(component.pageChange.emit).toHaveBeenCalledWith(4);
     });
   });
 
@@ -95,7 +95,7 @@ describe('PagingComponent', () => {
       el.query(By.css('li:nth-child(4) button')).triggerEventHandler('click', null);
       fixture.detectChanges();
 
-      expect(component.pageChange.emit).toHaveBeenCalledOnceWith(3);
+      expect(component.pageChange.emit).toHaveBeenCalledWith(3);
     });
 
     it('should select fourth page', () => {
@@ -103,7 +103,7 @@ describe('PagingComponent', () => {
       el.query(By.css('li:nth-child(5) button')).triggerEventHandler('click', null);
       fixture.detectChanges();
 
-      expect(component.pageChange.emit).toHaveBeenCalledOnceWith(4);
+      expect(component.pageChange.emit).toHaveBeenCalledWith(4);
     });
 
     it('should select second page', () => {
@@ -112,7 +112,7 @@ describe('PagingComponent', () => {
       el.query(By.css('li:nth-child(3) button')).triggerEventHandler('click', null);
       fixture.detectChanges();
 
-      expect(component.pageChange.emit).toHaveBeenCalledOnceWith(2);
+      expect(component.pageChange.emit).toHaveBeenCalledWith(2);
     });
   });
 });

@@ -48,11 +48,11 @@ describe('SimplePopupComponent', () => {
     fixture.detectChanges();
     component.onTogglePopup(false);
 
-    expect(component.showPopup).toBeTrue();
+    expect(component.showPopup).toBeTruthy();
 
     tick(2000);
     fixture.detectChanges();
 
-    expect(component.showPopup).toBeFalse();
+    expect(component.showPopup).toBeFalsy();
   }));
 });

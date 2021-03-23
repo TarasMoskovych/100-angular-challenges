@@ -34,7 +34,7 @@ describe('ButtonToggleComponent', () => {
     component.buttons = buttons;
     fixture.detectChanges();
 
-    spyOn(component.buttonClick, 'emit');
+    jest.spyOn(component.buttonClick, 'emit');
   });
 
   it('should create', () => {
@@ -47,6 +47,6 @@ describe('ButtonToggleComponent', () => {
     fixture.detectChanges();
 
     expect(button.nativeElement.classList).toContain('active');
-    expect(component.buttonClick.emit).toHaveBeenCalledOnceWith(buttons[0]);
+    expect(component.buttonClick.emit).toHaveBeenCalledWith(buttons[0]);
   });
 });

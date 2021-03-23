@@ -37,7 +37,7 @@ describe('DebounceClickDirective', () => {
   });
 
   it('should call callback', fakeAsync(() => {
-    spyOn(component, 'onClick');
+    jest.spyOn(component, 'onClick');
 
     for (let i = 0; i < 3; i++) {
       el.query(By.css('button')).nativeElement.click();

@@ -33,7 +33,7 @@ describe('DebounceSearchComponent', () => {
     el = fixture.debugElement;
     fixture.detectChanges();
 
-    spyOn(component, 'onSearch');
+    jest.spyOn(component, 'onSearch');
   });
 
   it('should create', () => {
@@ -48,13 +48,13 @@ describe('DebounceSearchComponent', () => {
     fixture.detectChanges();
 
     tick(250);
-    expect(component.onSearch).toHaveBeenCalledOnceWith(value);
+    expect(component.onSearch).toHaveBeenCalledWith(value);
   }));
 
   it('should clear the value', fakeAsync(() => {
     el.query(By.css('i')).triggerEventHandler('click', null);
 
     tick(250);
-    expect(component.onSearch).toHaveBeenCalledOnceWith('');
+    expect(component.onSearch).toHaveBeenCalledWith('');
   }));
 });

@@ -30,7 +30,7 @@ describe('ToggleComponent', () => {
     component.checked = true;
     fixture.detectChanges();
 
-    expect(el.query(By.css('input')).nativeElement.checked).toBeTrue();
+    expect(el.query(By.css('input')).nativeElement.checked).toBeTruthy();
   });
 
   describe('unchecked', () => {
@@ -39,16 +39,16 @@ describe('ToggleComponent', () => {
     });
 
     it('should be unchecked by default', () => {
-      expect(el.query(By.css('input')).nativeElement.checked).toBeFalse();
+      expect(el.query(By.css('input')).nativeElement.checked).toBeFalsy();
     });
 
     it('should emit "true"', () => {
-      spyOn(component.check, 'emit');
+      jest.spyOn(component.check, 'emit');
       el.query(By.css('input')).triggerEventHandler('change', null);
       fixture.detectChanges();
 
-      expect(el.query(By.css('input')).nativeElement.checked).toBeTrue();
-      expect(component.check.emit).toHaveBeenCalledOnceWith(true);
+      expect(el.query(By.css('input')).nativeElement.checked).toBeTruthy();
+      expect(component.check.emit).toHaveBeenCalledWith(true);
     });
   });
 });

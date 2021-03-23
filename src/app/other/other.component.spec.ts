@@ -34,7 +34,7 @@ describe('OtherComponent', () => {
       },
     } as any;
 
-    spyOn(spy.form, 'reset');
+    jest.spyOn(spy.form, 'reset');
 
     component.onSubmit(spy);
     expect(spy.form.reset).toHaveBeenCalled();

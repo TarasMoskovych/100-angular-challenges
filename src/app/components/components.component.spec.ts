@@ -13,8 +13,8 @@ describe('ComponentsComponent', () => {
   let component: ComponentsComponent;
   let fixture: ComponentFixture<ComponentsComponent>;
   let el: DebugElement;
-  let snackbarServiceSpy = jasmine.createSpyObj('SnackbarService', ['show']);
-  let userServiceSpy = jasmine.createSpyObj('UsersService', { get: of(testUser) });
+  let snackbarServiceSpy = { show: jest.fn() };
+  let userServiceSpy = { get: jest.fn().mockReturnValue(of(testUser)) };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -37,6 +37,7 @@ describe('ComponentsComponent', () => {
     component = fixture.componentInstance;
     el = fixture.debugElement;
     fixture.detectChanges();
+    jest.spyOn(global.console, 'log');
   });
 
   it('should create', () => {
@@ -71,31 +72,25 @@ describe('ComponentsComponent', () => {
   });
 
   describe('modal', () => {
-    beforeEach(() => {
-      spyOn(console, 'log');
-    });
-
     it('should open modal', () => {
       el.query(By.css('button.open-modal')).triggerEventHandler('click', null);
 
-      expect(component.modal.opened).toBeTrue();
+      expect(component.modal.opened).toBeTruthy();
       expect(console.log).toHaveBeenCalled();
     });
 
     it('should close modal"', () => {
       component.onToggleModal();
 
-      expect(component.modal.opened).toBeFalse();
-      expect(console.log).not.toHaveBeenCalled();
+      expect(component.modal.opened).toBeFalsy();
     });
   });
 
   it('should update value onSearch', () => {
     const value = 'Test value';
-    spyOn(console, 'log');
     component.onSearch(value);
 
-    expect(console.log).toHaveBeenCalledOnceWith(value);
+    expect(console.log).toHaveBeenCalledWith(value);
     expect(component.search).toBe(value);
   });
 

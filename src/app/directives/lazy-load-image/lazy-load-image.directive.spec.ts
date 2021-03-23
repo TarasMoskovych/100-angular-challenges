@@ -1,10 +1,10 @@
-import { ChangeDetectorRef, ElementRef } from '@angular/core';
+import { ElementRef } from '@angular/core';
 import { fakeAsync, tick } from '@angular/core/testing';
 
 import { LazyLoadImageDirective } from './lazy-load-image.directive';
 
 describe('LazyLoadImageDirective', () => {
-  const cdrSpy: jasmine.SpyObj<ChangeDetectorRef> = jasmine.createSpyObj('ChangeDetector', ['markForCheck']);
+  const cdrSpy = { markForCheck: jest.fn() } as any;
   const src: string = 'assets/img/img1.jpg';
   let directive: LazyLoadImageDirective;
 

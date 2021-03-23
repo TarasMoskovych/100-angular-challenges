@@ -21,7 +21,7 @@ describe('CountdownTimerComponent', () => {
     component = fixture.componentInstance;
     el = fixture.debugElement;
 
-    spyOn(component.finish, 'emit');
+    jest.spyOn(component.finish, 'emit');
   });
 
   it('should create', () => {

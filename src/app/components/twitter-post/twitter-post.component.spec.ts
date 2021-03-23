@@ -12,7 +12,7 @@ describe('TwitterPostComponent', () => {
       declarations: [TwitterPostComponent],
       providers: [{
         provide: Title,
-        useValue: jasmine.createSpyObj('Title', { getTitle: 'AngularChallenges' }),
+        useValue: { getTitle: jest.fn().mockReturnValue('AngularChallenges') },
       }],
     })
     .compileComponents();

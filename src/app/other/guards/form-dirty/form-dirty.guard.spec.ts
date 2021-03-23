@@ -9,7 +9,7 @@ describe('FormDirtyGuard', () => {
     TestBed.configureTestingModule({});
     guard = TestBed.inject(FormDirtyGuard);
 
-    spyOn(window, 'confirm');
+    jest.spyOn(global, 'confirm' as any).mockReturnValueOnce(true);
   });
 
   it('should be created', () => {
@@ -17,7 +17,7 @@ describe('FormDirtyGuard', () => {
   });
 
   it('should resolve', () => {
-    expect(guard.canDeactivate({ formComponent: { form: {} } })).toBeTrue();
+    expect(guard.canDeactivate({ formComponent: { form: {} } })).toBeTruthy();
     expect(window.confirm).not.toHaveBeenCalled();
   });
 

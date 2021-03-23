@@ -28,18 +28,18 @@ describe('TopOfPageComponent', () => {
   });
 
   it('should scroll to top on click', () => {
-    spyOn(component['viewportScroller'], 'scrollToPosition');
+    jest.spyOn(component['viewportScroller'], 'scrollToPosition');
     el.query(By.css('.top-of-page')).triggerEventHandler('click', null);
 
     expect(component['viewportScroller'].scrollToPosition).toHaveBeenCalledTimes(1);
   });
 
   it('should be visible while scrolling', () => {
-    spyOn(component['viewportScroller'], 'getScrollPosition').and.returnValue([400, 400]);
+    jest.spyOn(component['viewportScroller'], 'getScrollPosition').mockReturnValue([400, 400]);
     window.dispatchEvent(new Event('scroll'));
     fixture.detectChanges();
 
-    expect(component.visible).toBeTrue();
+    expect(component.visible).toBeTruthy();
     expect(el.query(By.css('.top-of-page')).nativeElement.classList).toContain('top-of-page--visible');
   });
 });

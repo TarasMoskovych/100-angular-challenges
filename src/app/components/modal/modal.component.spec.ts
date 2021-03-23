@@ -32,7 +32,7 @@ describe('ModalComponent', () => {
     beforeEach(() => {
       component.opened = true;
       fixture.detectChanges();
-      spyOn(component.close, 'emit');
+      jest.spyOn(component.close, 'emit');
     });
 
     it('should be opened', () => {
@@ -50,7 +50,7 @@ describe('ModalComponent', () => {
   describe('closed', () => {
     beforeEach(() => {
       fixture.detectChanges();
-      spyOn(component.open, 'emit');
+      jest.spyOn(component.open, 'emit');
     });
 
     it('should be closed', () => {
@@ -60,7 +60,7 @@ describe('ModalComponent', () => {
     it('should open', () => {
       component.openModal();
 
-      expect(component.opened).toBeTrue();
+      expect(component.opened).toBeTruthy();
       expect(component.open.emit).toHaveBeenCalled();
     });
   });

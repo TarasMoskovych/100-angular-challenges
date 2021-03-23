@@ -35,8 +35,8 @@ describe('UsersService', () => {
     req.flush([testUser]);
   });
 
-  it('should get user', (done: DoneFn) => {
-    spyOn(Math, 'random').and.returnValue(0);
+  it('should get user', (done) => {
+    jest.spyOn(Math, 'random').mockReturnValue(0);
 
     service.getOne()
       .subscribe((response: User) => {

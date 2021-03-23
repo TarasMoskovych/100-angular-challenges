@@ -23,7 +23,7 @@ describe('SnackbarComponent', () => {
     component = fixture.componentInstance;
     el = fixture.debugElement;
 
-    spyOn(component.afterClosed, 'emit');
+    jest.spyOn(component.afterClosed, 'emit');
   });
 
   it('should create', () => {

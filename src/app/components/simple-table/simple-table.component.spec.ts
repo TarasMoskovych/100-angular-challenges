@@ -23,7 +23,7 @@ describe('SimpleTableComponent', () => {
     component.data = [testUser];
     el = fixture.debugElement;
 
-    spyOn(component.sort, 'emit');
+    jest.spyOn(component.sort, 'emit');
   });
 
   it('should create', () => {
@@ -79,7 +79,7 @@ describe('SimpleTableComponent', () => {
     });
 
     afterEach(() => {
-      expect(component.sort.emit).toHaveBeenCalledOnceWith({ key: 'name', asc: component.asc });
+      expect(component.sort.emit).toHaveBeenCalledWith({ key: 'name', asc: component.asc });
       expect(icon.classList).toContain('fa-arrow-down');
     });
   });

@@ -1,6 +1,8 @@
 import { DOCUMENT } from '@angular/common';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
+import { SnackbarComponent } from 'src/app/shared/components';
 import { SnackbarService } from './snackbar.service';
 
 describe('SnackbarService', () => {
@@ -8,7 +10,13 @@ describe('SnackbarService', () => {
   let ngDocument: Document;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      declarations: [SnackbarComponent],
+    }).overrideModule(BrowserDynamicTestingModule, {
+      set: {
+        entryComponents: [SnackbarComponent],
+      },
+    });
 
     ngDocument = TestBed.inject(DOCUMENT);
     service = TestBed.inject(SnackbarService);
@@ -36,7 +44,7 @@ describe('SnackbarService', () => {
   it('should destroy the component on "afterClosed"', fakeAsync(() => {
     const instance = service.show();
 
-    spyOn(service['appRef'], 'detachView');
+    jest.spyOn(service['appRef'], 'detachView');
     instance.afterClosed.emit();
     tick(500);
 

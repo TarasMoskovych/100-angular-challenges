@@ -16,7 +16,9 @@ describe('ServicesComponent', () => {
       providers: [
         {
           provide: UsersService,
-          useValue: jasmine.createSpyObj('Service', { getOne: of(testUser) }),
+          useValue: {
+            getOne: jest.fn().mockRejectedValue(of(testUser)),
+          },
         },
       ],
       schemas: [NO_ERRORS_SCHEMA],
