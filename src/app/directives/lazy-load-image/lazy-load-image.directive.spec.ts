@@ -29,6 +29,7 @@ describe('LazyLoadImageDirective', () => {
     });
 
     it('should be successfully destroyed', () => {
+      directive.ngAfterViewInit();
       directive.ngOnDestroy();
       expect(directive['observer']).toBeUndefined();
     });
@@ -58,12 +59,15 @@ describe('LazyLoadImageDirective', () => {
       expect(directive.srcAttr).toBe(src);
     }));
 
-    it('should trigger change detection', () => {
+    it('should trigger change detection', fakeAsync(() => {
       directive.ngAfterViewInit();
+
+      tick();
       expect(cdrSpy.markForCheck).toHaveBeenCalled();
-    });
+    }));
 
     it('should be successfully destroyed', () => {
+      directive.ngAfterViewInit();
       directive.ngOnDestroy();
       expect(directive['observer']).toBeDefined();
     });
