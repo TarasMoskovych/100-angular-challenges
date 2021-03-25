@@ -1,0 +1,9 @@
+<fieldset class="fieldset" [attr.aria-expanded]="expanded">
+  <legend class="fieldset__toggle" (click)="onToggle()">
+    <i class="fa" [ngClass]="icon"></i>
+    {{ header }}
+  </legend>
+  <div @fade *ngIf="expanded" class="fieldset__content">
+    <ng-content></ng-content>
+  </div>
+</fieldset>

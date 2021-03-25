@@ -7,6 +7,7 @@ export * from './countdown-timer/countdown-timer.component';
 export * from './counter/counter.component';
 export * from './credit-card-input/credit-card-input.component';
 export * from './debounce-search/debounce-search.component';
+export * from './fieldset/fieldset.component';
 export * from './linkedin-post/linkedin-post.component';
 export * from './modal/modal.component';
 export * from './paging/paging.component';
