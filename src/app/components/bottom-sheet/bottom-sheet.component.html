@@ -1,0 +1,7 @@
+<div class="bottom-sheet">
+  <div *ngIf="isOpened" @fade class="bottom-sheet__overlay" (click)="onClose()"></div>
+  <div *ngIf="isOpened" @fade-container class="bottom-sheet__container">
+    <i class="fa fa-times" (click)="onClose()"></i>
+    <ng-content></ng-content>
+  </div>
+</div>

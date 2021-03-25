@@ -103,4 +103,9 @@ describe('ComponentsComponent', () => {
     component.onCountDownFinish();
     expect(snackbarServiceSpy.show).toHaveBeenCalled();
   });
+
+  it('should set bottomSheetOpened to "true"', () => {
+    component.onToggleBottomSheet(true);
+    expect(component.bottomSheetOpened).toBeTruthy();
+  });
 });

@@ -123,6 +123,8 @@ export class ComponentsComponent implements OnInit {
     },
   ];
 
+  bottomSheetOpened = false;
+
   onUpdate(): void {
     this.value = Math.ceil(Math.random() * 100);
   }
@@ -150,5 +152,9 @@ export class ComponentsComponent implements OnInit {
 
   onCountDownFinish(): void {
     this.snackbarService.show('Happy New 2022 Year!', false);
+  }
+
+  onToggleBottomSheet(opened: boolean): void {
+    this.bottomSheetOpened = opened;
   }
 }

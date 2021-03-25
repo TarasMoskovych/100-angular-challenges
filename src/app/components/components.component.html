@@ -26,6 +26,15 @@
   <app-banner-cut-out body text="100 Angular Challenges"></app-banner-cut-out>
 </app-card>
 
+<app-card class="wrapper" title="Bottom Sheet" subtitle="Components">
+  <ng-container body>
+    <app-bottom-sheet [isOpened]="bottomSheetOpened" (close)="onToggleBottomSheet(false)">
+      <app-email-form (formSubmit)="onToggleBottomSheet(false)"></app-email-form>
+    </app-bottom-sheet>
+    <button class="open-bottom-sheet" (click)="onToggleBottomSheet(true)">Open</button>
+  </ng-container>
+</app-card>
+
 <app-card class="wrapper" title="Button Toggle" subtitle="Components">
   <app-button-toggle body [buttons]="buttons"></app-button-toggle>
 </app-card>
