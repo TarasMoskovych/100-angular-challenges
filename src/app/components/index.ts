@@ -17,6 +17,7 @@ export * from './rich-text-viewer/rich-text-viewer.component';
 export * from './search-list/search-list.component';
 export * from './simple-popup/simple-popup.component';
 export * from './simple-table/simple-table.component';
+export * from './social-media-bar/social-media-bar.component';
 export * from './sort-table/sort-table.component';
 export * from './star-ratings/star-ratings.component';
 export * from './tabs/tabs.component';

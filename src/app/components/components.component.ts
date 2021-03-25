@@ -12,6 +12,7 @@ import {
   Tab,
   RibbonLocation,
   RibbonType,
+  SocialMedia,
 } from './';
 import { SnackbarService, User, UsersService } from '../services';
 
@@ -93,6 +94,34 @@ export class ComponentsComponent implements OnInit {
   ];
 
   counter = 1;
+
+  socials: SocialMedia[] = [
+    {
+      color: '#3B5998',
+      href: 'https://www.facebook.com',
+      icon: 'fab fa-facebook-f',
+    },
+    {
+      color: '#C13584',
+      href: 'https://www.instagram.com',
+      icon: 'fab fa-instagram',
+    },
+    {
+      color: '#0E76A8',
+      href: 'https://www.linkedin.com/',
+      icon: 'fab fa-linkedin-in',
+    },
+    {
+      color: '#1DA1F2',
+      href: 'https://twitter.com',
+      icon: 'fab fa-twitter',
+    },
+    {
+      color: '#C4302B',
+      href: 'https://www.youtube.com',
+      icon: 'fab fa-youtube',
+    },
+  ];
 
   onUpdate(): void {
     this.value = Math.ceil(Math.random() * 100);

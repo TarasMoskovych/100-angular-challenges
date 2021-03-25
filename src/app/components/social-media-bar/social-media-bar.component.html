@@ -1,0 +1,10 @@
+<div *ngIf="socials.length" class="social-media-bar">
+  <a
+    *ngFor="let social of socials"
+    class="social-media-bar__item"
+    target="_blank"
+    [href]="social.href"
+    [ngStyle]="{ 'background-color': social.color }"
+  ><i [class]="social.icon"></i>
+  </a>
+</div>
