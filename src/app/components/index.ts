@@ -11,6 +11,7 @@ export * from './fieldset/fieldset.component';
 export * from './linkedin-post/linkedin-post.component';
 export * from './modal/modal.component';
 export * from './paging/paging.component';
+export * from './pill/pill.component';
 export * from './progress-bar/progress-bar.component';
 export * from './quote/quote.component';
 export * from './quote/quote.model';

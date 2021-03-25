@@ -10,6 +10,7 @@ import {
   Quote,
   QuoteColors,
   Tab,
+  PillType,
   RibbonLocation,
   RibbonType,
   SocialMedia,
@@ -124,6 +125,28 @@ export class ComponentsComponent implements OnInit {
   ];
 
   bottomSheetOpened = false;
+  pills = [
+    {
+      label: 'Error',
+      type: PillType.Error,
+      icon: 'fas fa-exclamation',
+    },
+    {
+      label: 'Info',
+      type: PillType.Info,
+      icon: 'fas fa-info',
+    },
+    {
+      label: 'Success',
+      type: PillType.Success,
+      icon: 'fas fa-check-circle',
+    },
+    {
+      label: 'Warning',
+      type: PillType.Warning,
+      icon: '',
+    },
+  ];
 
   onUpdate(): void {
     this.value = Math.ceil(Math.random() * 100);

@@ -104,6 +104,18 @@
   <app-paging body></app-paging>
 </app-card>
 
+<app-card class="wrapper" title="Pill" subtitle="Components">
+  <ng-container body>
+    <app-pill
+      *ngFor="let pill of pills"
+      [label]="pill.label"
+      [icon]="pill.icon"
+      [type]="pill.type"
+      style="margin-right: 10px;"
+    ></app-pill>
+  </ng-container>
+</app-card>
+
 <div style="position: relative;">
   <app-card class="wrapper" title="Loader" subtitle="Components" icon="fas fa-info-circle">
     <div body>

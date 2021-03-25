@@ -1,0 +1,13 @@
+@import 'variables';
+
+.pill {
+  border-radius: 20px;
+  color: $white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 5px 12px;
+
+  i {
+    margin-right: 2px;
+  }
+}
