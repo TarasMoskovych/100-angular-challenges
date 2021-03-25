@@ -5,8 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "test": "jest --watch --coverage",
-    "test:ci": "jest --coverage",
+    "test": "jest --watch --coverage --verbose",
+    "test:ci": "jest --coverage --verbose",
     "lint": "ng lint"
   },
   "private": true,

@@ -3,7 +3,7 @@
     <div body>
       <div *ngIf="user$ | async as user; else loader">{{ user | json }}</div>
       <ng-template #loader>
-        <app-loader [shown]="true"></app-loader>
+        <app-skeleton-loader></app-skeleton-loader>
       </ng-template>
     </div>
   </app-card>

@@ -104,6 +104,16 @@
   <button class="change-loader" (click)="onChangeLoader()">Change loader</button>
 </div>
 
+<app-card class="wrapper" title="Skeleton Loader" subtitle="Components">
+  <ng-container body>
+    <app-skeleton-loader *ngIf="loader"></app-skeleton-loader>
+    <p *ngIf="!loader">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis cumque ad voluptatem quia, sunt
+      beatae similique corrupti nihil aperiam vitae!
+    </p>
+  </ng-container>
+</app-card>
+
 <app-card class="wrapper" title="Progress Bar" subtitle="Components" color="#929293">
   <ng-container body>
     <app-progress-bar [value]="value"></app-progress-bar>
