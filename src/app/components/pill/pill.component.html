@@ -1,4 +1,5 @@
-<span class="pill" [ngStyle]="color">
-  <i *ngIf="icon" [class]="icon"></i>
-  {{ label }}
+<span class="pill" [ngStyle]="color" (click)="onSelect(pill)">
+  <i *ngIf="pill.icon" [class]="pill.icon"></i>
+  {{ pill.label }}
+  <i *ngIf="pill.selected" class="fa fa-times"></i>
 </span>

@@ -108,12 +108,14 @@
   <ng-container body>
     <app-pill
       *ngFor="let pill of pills"
-      [label]="pill.label"
-      [icon]="pill.icon"
-      [type]="pill.type"
+      [pill]="pill"
       style="margin-right: 10px;"
     ></app-pill>
   </ng-container>
+</app-card>
+
+<app-card class="wrapper" title="Pill Filters" subtitle="Components">
+  <app-pill-filters body [labels]="['CA', 'FL', 'TN', 'OR', 'WA']"></app-pill-filters>
 </app-card>
 
 <div style="position: relative;">

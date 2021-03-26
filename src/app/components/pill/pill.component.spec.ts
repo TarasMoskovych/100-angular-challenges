@@ -23,13 +23,20 @@ describe('PillComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should emit "select"', () => {
+    jest.spyOn(component.select, 'emit');
+
+    component.onSelect(component.pill);
+    expect(component.select.emit).toHaveBeenCalledWith(component.pill);
+  });
+
   describe('color', () => {
     it('should return default value', () => {
-      expect(component.color).toEqual({ 'background-color': COLORS_MAP.success });
+      expect(component.color).toEqual({ 'background-color': COLORS_MAP.info });
     });
 
     it('should return value based on type', () => {
-      component.type = PillType.Error;
+      component.pill = { label: '', type: PillType.Error };
       expect(component.color).toEqual({ 'background-color': COLORS_MAP.error });
     });
   });

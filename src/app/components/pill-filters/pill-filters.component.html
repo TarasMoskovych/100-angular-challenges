@@ -1,0 +1,13 @@
+<div class="pill-filters">
+  <div class="pill-filters--top">
+    <ng-container *ngFor="let pill of pills">
+      <app-pill *ngIf="pill.selected" [pill]="pill" (select)="onFilter($event)"></app-pill>
+    </ng-container>
+  </div>
+  <hr>
+  <div class="pill-filters--bottom">
+    <ng-container *ngFor="let pill of pills">
+      <app-pill *ngIf="!pill.selected" [pill]="pill" (select)="onFilter($event)"></app-pill>
+    </ng-container>
+  </div>
+</div>

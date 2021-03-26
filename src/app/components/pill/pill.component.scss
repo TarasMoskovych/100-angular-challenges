@@ -6,6 +6,11 @@
   cursor: pointer;
   font-size: 0.95rem;
   padding: 5px 12px;
+  transition: .3s;
+
+  &:hover {
+    background-color: $light-grey !important;
+  }
 
   i {
     margin-right: 2px;

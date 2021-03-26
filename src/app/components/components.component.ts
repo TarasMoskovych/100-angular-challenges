@@ -11,6 +11,7 @@ import {
   QuoteColors,
   Tab,
   PillType,
+  Pill,
   RibbonLocation,
   RibbonType,
   SocialMedia,
@@ -125,7 +126,7 @@ export class ComponentsComponent implements OnInit {
   ];
 
   bottomSheetOpened = false;
-  pills = [
+  pills: Pill[] = [
     {
       label: 'Error',
       type: PillType.Error,
@@ -144,7 +145,6 @@ export class ComponentsComponent implements OnInit {
     {
       label: 'Warning',
       type: PillType.Warning,
-      icon: '',
     },
   ];
 

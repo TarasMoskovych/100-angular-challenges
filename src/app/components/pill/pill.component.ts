@@ -1,10 +1,17 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 
 export enum PillType {
   Error = 'error',
   Info = 'info',
   Success = 'success',
   Warning = 'warning'
+}
+
+export interface Pill {
+  label: string;
+  type?: PillType;
+  selected?: boolean;
+  icon?: string
 }
 
 export const COLORS_MAP = {
@@ -21,13 +28,16 @@ export const COLORS_MAP = {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PillComponent {
-  @Input() label = 'Default label';
-  @Input() icon: string = '';
-  @Input() type: PillType;
+  @Input() pill: Pill = { label: 'Default label' };
+  @Output() select = new EventEmitter<Pill>();
 
   get color(): Object {
     return {
-      'background-color': COLORS_MAP[this.type] || COLORS_MAP.success,
+      'background-color': COLORS_MAP[this.pill.type || 'info'],
     };
+  }
+
+  onSelect(pill: Pill): void {
+    this.select.emit(pill);
   }
 }
