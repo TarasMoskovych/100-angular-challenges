@@ -3,6 +3,7 @@ export * from './email-form/email-form.component';
 export * from './footer/footer.component';
 export * from './loader/loader.component';
 export * from './loader/loader-type.model';
+export * from './not-found/not-found.component';
 export * from './skeleton-loader/skeleton-loader.component';
 export * from './snackbar/snackbar.component';
 export * from './toolbar/toolbar.component';

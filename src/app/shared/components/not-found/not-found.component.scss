@@ -1,0 +1,26 @@
+@import 'variables';
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+
+  &__title {
+    color: $blue;
+    text-transform: uppercase;
+  }
+
+  &__icon {
+    color: $blue;
+    font-size: 5rem;
+  }
+
+  &__item {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+}
