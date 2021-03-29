@@ -6,6 +6,7 @@ import { PipesComponent } from './pipes.component';
 import {
   CreditCardFormatterPipe,
   FlattenPipe,
+  RichTextPipe,
   TruncatePipe,
 } from '.';
 
@@ -20,6 +21,7 @@ describe('PipesComponent', () => {
         PipesComponent,
         CreditCardFormatterPipe,
         FlattenPipe,
+        RichTextPipe,
         TruncatePipe,
       ],
       schemas: [NO_ERRORS_SCHEMA],

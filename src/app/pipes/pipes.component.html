@@ -24,6 +24,10 @@
   </div>
 </app-card>
 
+<app-card class="wrapper" title="Rich Text" subtitle="Pipes" icon="fas fa-info-circle">
+  <div body [innerHtml]="html | richText"></div>
+</app-card>
+
 <app-card class="wrapper" title="Truncate" subtitle="Pipes" icon="fas fa-info-circle">
   <p body>{{ 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati ab, quos laudantium,
     dolores consectetur doloribus sint quidem saepe dignissimos dolor maxime praesentium. Quaerat
