@@ -7,6 +7,7 @@ import {
   CreditCardFormatterPipe,
   FlattenPipe,
   RichTextPipe,
+  SortByPipe,
   TruncatePipe,
 } from '.';
 
@@ -22,6 +23,7 @@ describe('PipesComponent', () => {
         CreditCardFormatterPipe,
         FlattenPipe,
         RichTextPipe,
+        SortByPipe,
         TruncatePipe,
       ],
       schemas: [NO_ERRORS_SCHEMA],

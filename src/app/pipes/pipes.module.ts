@@ -9,6 +9,7 @@ import {
   CreditCardFormatterPipe,
   FlattenPipe,
   RichTextPipe,
+  SortByPipe,
   TruncatePipe,
 } from './';
 
@@ -18,6 +19,7 @@ import {
     CreditCardFormatterPipe,
     FlattenPipe,
     RichTextPipe,
+    SortByPipe,
     TruncatePipe,
   ],
   imports: [

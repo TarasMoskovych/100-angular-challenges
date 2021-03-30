@@ -9,4 +9,5 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 export class PipesComponent {
   data = [1, 2, [3, 4], [[5, 6]]];
   html = `<a href="https://angular.io/" target="_blank">Angular Documentation</a>`;
+  courses: string[] = ['Twitter', 'YouTube', 'LinkedIn', 'Coursera'];
 }
