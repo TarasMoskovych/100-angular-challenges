@@ -1,5 +1,5 @@
 <div class="modal">
-  <div *ngIf="opened" @fade-overlay class="modal__overlay" (click)="closeModal()"></div>
+  <app-overlay *ngIf="opened" @fade-overlay (click)="closeModal()"></app-overlay>
   <div *ngIf="opened" @fade-modal class="modal__wrapper">
     <div class="modal__title">
       <div class="modal__title-text">

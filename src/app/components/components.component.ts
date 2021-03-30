@@ -126,6 +126,7 @@ export class ComponentsComponent implements OnInit {
   ];
 
   bottomSheetOpened = false;
+  showOverlay = false;
   pills: Pill[] = [
     {
       label: 'Error',

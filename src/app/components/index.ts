@@ -10,6 +10,7 @@ export * from './debounce-search/debounce-search.component';
 export * from './fieldset/fieldset.component';
 export * from './linkedin-post/linkedin-post.component';
 export * from './modal/modal.component';
+export * from './overlay/overlay.component';
 export * from './paging/paging.component';
 export * from './password/password.component';
 export * from './pill/pill.component';

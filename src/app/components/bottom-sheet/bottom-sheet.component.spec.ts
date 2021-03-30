@@ -1,4 +1,4 @@
-import { DebugElement } from '@angular/core';
+import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,7 +13,8 @@ describe('BottomSheetComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [NoopAnimationsModule],
-      declarations: [ BottomSheetComponent ]
+      declarations: [BottomSheetComponent],
+      schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
   });
@@ -46,7 +47,7 @@ describe('BottomSheetComponent', () => {
     });
 
     it('should emit "close" on click', () => {
-      el.query(By.css('.bottom-sheet__overlay')).triggerEventHandler('click', null);
+      el.query(By.css('app-overlay')).triggerEventHandler('click', null);
       expect(component.close.emit).toHaveBeenCalled();
     });
   });

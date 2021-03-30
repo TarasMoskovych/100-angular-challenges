@@ -100,6 +100,13 @@
   </div>
 </app-card>
 
+<app-card class="wrapper" title="Overlay" subtitle="Components">
+  <ng-container body>
+    <app-overlay *ngIf="showOverlay" (click)="showOverlay = false"></app-overlay>
+    <button (click)="showOverlay = true">Show overlay</button>
+  </ng-container>
+</app-card>
+
 <app-card class="wrapper" title="Not Found" subtitle="Components">
   <a body routerLink="/404">Go to 404 page</a>
 </app-card>
