@@ -8,6 +8,7 @@ import {
   FlattenPipe,
   RichTextPipe,
   SortByPipe,
+  SortByKeyPipe,
   TruncatePipe,
 } from '.';
 
@@ -24,6 +25,7 @@ describe('PipesComponent', () => {
         FlattenPipe,
         RichTextPipe,
         SortByPipe,
+        SortByKeyPipe,
         TruncatePipe,
       ],
       schemas: [NO_ERRORS_SCHEMA],

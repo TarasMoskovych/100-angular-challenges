@@ -10,6 +10,7 @@ import {
   FlattenPipe,
   RichTextPipe,
   SortByPipe,
+  SortByKeyPipe,
   TruncatePipe,
 } from './';
 
@@ -20,6 +21,7 @@ import {
     FlattenPipe,
     RichTextPipe,
     SortByPipe,
+    SortByKeyPipe,
     TruncatePipe,
   ],
   imports: [

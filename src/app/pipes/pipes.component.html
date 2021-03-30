@@ -35,6 +35,31 @@
   </ng-container>
 </app-card>
 
+<app-card class="wrapper" title="Sort By Key" subtitle="Pipes" icon="fas fa-info-circle">
+  <div body class="d-flex flex-wrap justify-content-center">
+    <div style="margin: 10px;">
+      <b>Sort by "name": asc</b>
+      <p *ngFor="let framework of frameworks | sortByKey:'name'">{{ framework | json }}</p>
+    </div>
+    <div style="margin: 10px;">
+      <b>Sort by "name": desc</b>
+      <p *ngFor="let framework of frameworks | sortByKey:'name':false">{{ framework | json }}</p>
+    </div>
+    <div style="margin: 10px;">
+      <b>Sort by "id": asc</b>
+      <p *ngFor="let framework of frameworks | sortByKey:'id'">{{ framework | json }}</p>
+    </div>
+    <div style="margin: 10px;">
+      <b>Sort by "id": desc</b>
+      <p *ngFor="let framework of frameworks | sortByKey:'id':false">{{ framework | json }}</p>
+    </div>
+    <div style="margin: 10px;">
+      <b>Sort by unknown property</b>
+      <p *ngFor="let framework of frameworks | sortByKey:'test'">{{ framework | json }}</p>
+    </div>
+  </div>
+</app-card>
+
 <app-card class="wrapper" title="Truncate" subtitle="Pipes" icon="fas fa-info-circle">
   <p body>{{ 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati ab, quos laudantium,
     dolores consectetur doloribus sint quidem saepe dignissimos dolor maxime praesentium. Quaerat

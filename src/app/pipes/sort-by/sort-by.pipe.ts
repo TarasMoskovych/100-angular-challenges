@@ -14,8 +14,6 @@ export class SortByPipe implements PipeTransform {
       throw new Error('Should be array');
     }
 
-    return arr.sort((a: string, b: string) => {
-      return asc ? a.localeCompare(b) : b.localeCompare(a);
-    });
+    return arr.sort((a: string, b: string) => asc ? a.localeCompare(b) : b.localeCompare(a));
   }
 }
