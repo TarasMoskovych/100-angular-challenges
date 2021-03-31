@@ -10,7 +10,10 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild([{ path: '', component: ServicesComponent }]),
+    RouterModule.forChild([
+      { path: '', component: ServicesComponent },
+      { path: ':id', component: ServicesComponent },
+    ]),
   ],
 })
 export class ServicesModule { }

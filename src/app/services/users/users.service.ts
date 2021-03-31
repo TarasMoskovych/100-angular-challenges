@@ -20,6 +20,13 @@ export class UsersService {
       );
   }
 
+  getById(id: string): Observable<User> {
+    return this.httpClient.get<User>(`${this.url}/${id}`)
+      .pipe(
+        map((user: User) => this.mapUser(user)),
+      );
+  }
+
   getOne(): Observable<User> {
     return this.httpClient.get<User>(`${this.url}/${Math.floor(Math.random() * 10) + 1}`)
       .pipe(

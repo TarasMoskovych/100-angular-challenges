@@ -3,6 +3,11 @@
   <button footer (click)="onUpdateState()">Update State</button>
 </app-card>
 
+<app-card class="wrapper" title="Param Example" subtitle="Services" icon="fas fa-info-circle">
+  <div body>{{ selectedUser$ | async | json }}</div>
+  <a footer routerLink="/services/3">Go to Route ID 3</a>
+</app-card>
+
 <div style="position: relative;">
   <app-card class="wrapper" title="Users" subtitle="Services" icon="fas fa-info-circle">
     <div body>

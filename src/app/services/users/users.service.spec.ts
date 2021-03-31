@@ -48,4 +48,16 @@ describe('UsersService', () => {
     expect(req.request.method).toBe('GET');
     req.flush(testUser2);
   });
+
+  it('should get user', (done) => {
+    service.getById('1')
+      .subscribe((response: User) => {
+        expect(response).toEqual(testUser2);
+        done();
+      });
+
+    const req = httpController.expectOne(`${service['url']}/1`);
+    expect(req.request.method).toBe('GET');
+    req.flush(testUser2);
+  });
 });
