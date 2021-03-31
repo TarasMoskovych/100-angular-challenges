@@ -4,9 +4,11 @@ import { of } from 'rxjs';
 
 import { ServicesComponent } from './services.component';
 import { testUser } from './users/user.model';
+import { LocalStorageService } from './local-storage/local-storage.service';
 import { UsersService } from './users/users.service';
 
 describe('ServicesComponent', () => {
+  const localStorageSpy = { state$: of({}), update: jest.fn() };
   let component: ServicesComponent;
   let fixture: ComponentFixture<ServicesComponent>;
 
@@ -15,9 +17,13 @@ describe('ServicesComponent', () => {
       declarations: [ServicesComponent],
       providers: [
         {
+          provide: LocalStorageService,
+          useValue: localStorageSpy,
+        },
+        {
           provide: UsersService,
           useValue: {
-            getOne: jest.fn().mockRejectedValue(of(testUser)),
+            getOne: jest.fn().mockReturnValue(of(testUser)),
           },
         },
       ],
@@ -34,5 +40,10 @@ describe('ServicesComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should call "update"', () => {
+    component.onUpdateState();
+    expect(localStorageSpy.update).toHaveBeenCalled();
   });
 });

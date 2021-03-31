@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
   ],
   providers: [
     { provide: 'Window', useValue: window },
+    { provide: 'LocalStorage', useValue: window.localStorage },
   ],
   bootstrap: [AppComponent]
 })

@@ -1,3 +1,8 @@
+<app-card class="wrapper" title="Local Storage" subtitle="Services" icon="fas fa-info-circle">
+  <div body>{{ state$ | async | json }}</div>
+  <button footer (click)="onUpdateState()">Update State</button>
+</app-card>
+
 <div style="position: relative;">
   <app-card class="wrapper" title="Users" subtitle="Services" icon="fas fa-info-circle">
     <div body>
