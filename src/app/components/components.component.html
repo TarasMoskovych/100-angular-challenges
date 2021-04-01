@@ -28,7 +28,7 @@
 
 <app-card class="wrapper" title="Bottom Sheet" subtitle="Components">
   <ng-container body>
-    <app-bottom-sheet [isOpened]="bottomSheetOpened" (close)="onToggleBottomSheet(false)">
+    <app-bottom-sheet [isOpened]="bottomSheetOpened" (closeSheet)="onToggleBottomSheet(false)">
       <app-email-form (formSubmit)="onToggleBottomSheet(false)"></app-email-form>
     </app-bottom-sheet>
     <button class="open-bottom-sheet" (click)="onToggleBottomSheet(true)">Open</button>
@@ -88,7 +88,7 @@
 
 <app-card class="wrapper" title="Modal" subtitle="Components">
   <div body>
-    <app-modal #exampleModal body title="Modal Title" (open)="onModalOpen()">
+    <app-modal #exampleModal body title="Modal Title" (openModal)="onModalOpen()">
       <p body>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta obcaecati suscipit
         non dignissimos ratione ab voluptas et eum rem aliquid.
       </p>

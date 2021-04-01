@@ -15,7 +15,7 @@ import { ToolbarComponent } from './toolbar.component';
 class TestHostComponent {
   title = 'Custom title';
 
-  onToggle(toggler: boolean) {}
+  onToggle(toggler: boolean): void {}
 }
 
 describe('ToolbarComponent', () => {

@@ -38,16 +38,19 @@ describe('SnackbarService', () => {
     service.show();
     service.show();
 
+    // tslint:disable-next-line
     expect(ngDocument.body.querySelectorAll(`.${service['wrapperSelector']}`).length).toBe(1);
   });
 
   it('should destroy the component on "afterClosed"', fakeAsync(() => {
     const instance = service.show();
 
+    // tslint:disable-next-line
     jest.spyOn(service['appRef'], 'detachView');
     instance.afterClosed.emit();
     tick(500);
 
+    // tslint:disable-next-line
     expect(service['appRef'].detachView).toHaveBeenCalled();
   }));
 });

@@ -7,7 +7,7 @@ import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from 
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToolbarComponent {
-  @Input() title: string = 'Default Title';
+  @Input() title = 'Default Title';
   @Output() toggle = new EventEmitter<boolean>();
   opened = false;
 

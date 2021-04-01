@@ -16,7 +16,7 @@ import { AccordionComponent } from './accordion.component';
   `
 })
 class TestHostComponent {
-  items: Object[] = [
+  items: any[] = [
     {
       title: 'title1',
       opened: true,

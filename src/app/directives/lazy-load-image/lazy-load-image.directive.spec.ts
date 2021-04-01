@@ -5,7 +5,7 @@ import { LazyLoadImageDirective } from './lazy-load-image.directive';
 
 describe('LazyLoadImageDirective', () => {
   const cdrSpy = { markForCheck: jest.fn() } as any;
-  const src: string = 'assets/img/img1.jpg';
+  const src = 'assets/img/img1.jpg';
   let directive: LazyLoadImageDirective;
 
   it('should create an instance', () => {
@@ -31,6 +31,7 @@ describe('LazyLoadImageDirective', () => {
     it('should be successfully destroyed', () => {
       directive.ngAfterViewInit();
       directive.ngOnDestroy();
+      // tslint:disable-next-line
       expect(directive['observer']).toBeUndefined();
     });
   });
@@ -38,13 +39,13 @@ describe('LazyLoadImageDirective', () => {
   describe('with observer', () => {
     beforeAll(() => {
       class IntersectionObserver {
-        constructor(cb: Function) {
+        constructor(cb: (entries: any) => void) {
           setTimeout(() => cb(this.entries));
         }
         entries = [{ isIntersecting: false }, { isIntersecting: true }];
-        observe() {}
-        unobserve() {}
-        disconnect() {}
+        observe(): void {}
+        unobserve(): void {}
+        disconnect(): void {}
       }
 
       directive = new LazyLoadImageDirective(window, { nativeElement: null } as ElementRef, cdrSpy);
@@ -69,6 +70,7 @@ describe('LazyLoadImageDirective', () => {
     it('should be successfully destroyed', () => {
       directive.ngAfterViewInit();
       directive.ngOnDestroy();
+      // tslint:disable-next-line
       expect(directive['observer']).toBeDefined();
     });
   });

@@ -30,6 +30,10 @@ describe('CreditCardInputComponent', () => {
   });
 
   describe('edit mode', () => {
+    beforeEach(() => {
+      component.readonly = false;
+    });
+
     it('should render mastercard icon', () => {
       component.value = '5280934283171080';
       fixture.detectChanges();

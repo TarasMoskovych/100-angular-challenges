@@ -59,6 +59,7 @@ describe('SortTableComponent', () => {
     });
 
     it('should sort by name and ignore argument when sort key is presented in "titleMap"', () => {
+      // tslint:disable-next-line
       sortTableComponent['titleMap'] = { name: false };
       sortTableComponent.onSort({ key: 'name', asc: false });
 
@@ -66,10 +67,12 @@ describe('SortTableComponent', () => {
     });
 
     it('should sort by email in desc order and delete previous sorts', () => {
+      // tslint:disable-next-line
       sortTableComponent['titleMap'] = { name: false };
       sortTableComponent.onSort({ key: 'email', asc: false });
 
       expect(sortTableComponent.data).toEqual([testUser, testUser2]);
+      // tslint:disable-next-line
       expect(sortTableComponent['titleMap']).toEqual({ email: false });
     });
   });

@@ -9,8 +9,8 @@ export class CreditCardFormatterPipe implements PipeTransform {
     let result = 'Invalid Card length';
 
     if (value.length === 16 || value.length === 15) {
-      result = value.split('').map((value: string, idx: number) => idx % 4 === 0 && idx !== 0 ? '-' + value : value).join('');
-    } else if (Number.parseInt(value).toString().length !== value.length) {
+      result = value.split('').map((val: string, idx: number) => idx % 4 === 0 && idx !== 0 ? '-' + val : val).join('');
+    } else if (Number.parseInt(value, 10).toString().length !== value.length) {
       result = 'Invalid Characters';
     }
 

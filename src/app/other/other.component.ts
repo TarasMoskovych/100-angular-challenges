@@ -18,7 +18,7 @@ export class OtherComponent {
   @ViewChild(EmailFormComponent) formComponent: EmailFormComponent;
   shown = true;
 
-  onSubmit(data: { form: FormGroup, values: Object }): void {
+  onSubmit(data: { form: FormGroup, values: any }): void {
     data.form.reset(data.form.value);
   }
 }

@@ -8,12 +8,16 @@ import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from 
 })
 export class SimpleTableComponent {
   @Input() data: any;
-  @Input() order = () => 0;
+  @Input() order = this.defaultOrder;
   @Input() sorted = false;
   @Input() asc = false;
   @Output() sort = new EventEmitter<{ key: string, asc: boolean }>();
 
   onSort(key: any): void {
     this.sort.emit({ key, asc: this.asc });
+  }
+
+  private defaultOrder(): number {
+    return 0;
   }
 }

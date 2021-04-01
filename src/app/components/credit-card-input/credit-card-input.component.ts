@@ -8,13 +8,20 @@ import { CreditCard } from './credit-card.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CreditCardInputComponent {
-  @Input() value: string = '';
+  @Input() value = '';
   @Input() set readonly(value: boolean) {
-    this._readonly = value;
-    value && this.formatCardNumber();
+    this.isReadonly = value;
+
+    if (value) {
+      this.formatCardNumber();
+    }
   }
 
-  private _readonly = false;
+  get readonly(): boolean {
+    return this.isReadonly;
+  }
+
+  private isReadonly = false;
   private cards: CreditCard[] = [
     {
       re: /^4[0-9]{12}(?:[0-9]{3})?$/,
@@ -33,10 +40,6 @@ export class CreditCardInputComponent {
       icon: 'fab fa-cc-discover',
     },
   ];
-
-  get readonly(): boolean {
-    return this._readonly;
-  }
 
   get cardIcon(): string {
     let icon = 'fas fa-credit-card';

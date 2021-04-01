@@ -39,7 +39,7 @@ describe('BottomSheetComponent', () => {
       component.isOpened = true;
       fixture.detectChanges();
 
-      jest.spyOn(component.close, 'emit');
+      jest.spyOn(component.closeSheet, 'emit');
     });
 
     it('should be opened', () => {
@@ -48,7 +48,7 @@ describe('BottomSheetComponent', () => {
 
     it('should emit "close" on click', () => {
       el.query(By.css('app-overlay')).triggerEventHandler('click', null);
-      expect(component.close.emit).toHaveBeenCalled();
+      expect(component.closeSheet.emit).toHaveBeenCalled();
     });
   });
 });

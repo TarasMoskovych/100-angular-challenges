@@ -5,7 +5,7 @@ import { SnackbarService } from 'src/app/services';
   selector: '[appCopy]'
 })
 export class CopyDirective {
-  @Input('appCopy') text: string = '';
+  @Input('appCopy') text = '';
   @HostListener('click')
   async onClick(): Promise<void> {
     await navigator.clipboard.writeText(this.text);

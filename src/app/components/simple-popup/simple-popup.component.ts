@@ -13,8 +13,8 @@ import { fadeInOutAnimation } from 'src/app/shared/animations';
   animations: [trigger('fade', fadeInOutAnimation())],
 })
 export class SimplePopupComponent {
-  @Input() text: string = 'Default text';
-  @Input() placement: string = 'top';
+  @Input() text = 'Default text';
+  @Input() placement = 'top';
 
   showPopup = false;
   clicked = false;

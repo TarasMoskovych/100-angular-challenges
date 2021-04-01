@@ -36,7 +36,7 @@ export class PagingComponent implements OnInit {
   }
 
   onSelect(page: number): void {
-    if (this.currentPage === page) return;
+    if (this.currentPage === page) { return; }
 
     this.currentPage = page;
     this.calculatePages();

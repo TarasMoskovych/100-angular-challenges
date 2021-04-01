@@ -26,7 +26,7 @@ describe('CounterComponent', () => {
     el = fixture.debugElement;
     fixture.detectChanges();
 
-    jest.spyOn(component.change, 'emit');
+    jest.spyOn(component.changeCounter, 'emit');
   });
 
   it('should create', () => {
@@ -38,7 +38,7 @@ describe('CounterComponent', () => {
       el.query(By.css('.counter__minus')).triggerEventHandler('click', null);
       fixture.detectChanges();
 
-      expect(component.change.emit).toHaveBeenCalledWith(0);
+      expect(component.changeCounter.emit).toHaveBeenCalledWith(0);
     });
 
     it('should not emit "change" when current value equals max', () => {
@@ -47,7 +47,7 @@ describe('CounterComponent', () => {
       el.query(By.css('.counter__minus')).triggerEventHandler('click', null);
       fixture.detectChanges();
 
-      expect(component.change.emit).not.toHaveBeenCalled();
+      expect(component.changeCounter.emit).not.toHaveBeenCalled();
       expect(component.value).toBe(0);
     });
   });
@@ -57,7 +57,7 @@ describe('CounterComponent', () => {
       el.query(By.css('.counter__plus')).triggerEventHandler('click', null);
       fixture.detectChanges();
 
-      expect(component.change.emit).toHaveBeenCalledWith(2);
+      expect(component.changeCounter.emit).toHaveBeenCalledWith(2);
     });
 
     it('should not emit "change" when current value equals min', () => {
@@ -66,7 +66,7 @@ describe('CounterComponent', () => {
       el.query(By.css('.counter__plus')).triggerEventHandler('click', null);
       fixture.detectChanges();
 
-      expect(component.change.emit).not.toHaveBeenCalled();
+      expect(component.changeCounter.emit).not.toHaveBeenCalled();
       expect(component.value).toBe(3);
     });
   });

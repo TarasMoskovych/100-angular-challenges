@@ -18,6 +18,7 @@ describe('LocalStorageService', () => {
 
   describe('init', () => {
     it('should call "getItem"', () => {
+      // tslint:disable-next-line
       expect(localStorageSpy.getItem).toHaveBeenCalledWith(service['stateKey']);
     });
 
@@ -29,9 +30,9 @@ describe('LocalStorageService', () => {
     });
 
     it('should return custom data', (done) => {
-      const service = new LocalStorageService({ ...localStorageSpy, getItem: jest.fn().mockReturnValue(JSON.stringify(expectedData)) });
+      const lsService = new LocalStorageService({ ...localStorageSpy, getItem: jest.fn().mockReturnValue(JSON.stringify(expectedData)) });
 
-      service.state$.subscribe((data: State) => {
+      lsService.state$.subscribe((data: State) => {
         expect(data).toEqual(expectedData);
         done();
       });
@@ -44,6 +45,7 @@ describe('LocalStorageService', () => {
     });
 
     it('should call "setItem"', () => {
+      // tslint:disable-next-line
       expect(localStorageSpy.setItem).toHaveBeenCalledWith(service['stateKey'], JSON.stringify({ ng: expectedData }));
     });
 
@@ -56,15 +58,15 @@ describe('LocalStorageService', () => {
   });
 
   describe('merge data', () => {
-    const service = new LocalStorageService({ ...localStorageSpy, getItem: jest.fn().mockReturnValue(JSON.stringify({ Angular: 11 })) });
+    const lsService = new LocalStorageService({ ...localStorageSpy, getItem: jest.fn().mockReturnValue(JSON.stringify({ Angular: 11 })) });
 
     beforeAll(() => {
-      service.update('Angular', 12);
-      service.update('test', [1, 2, 3]);
+      lsService.update('Angular', 12);
+      lsService.update('test', [1, 2, 3]);
     });
 
     it('should update state', (done) => {
-      service.state$.subscribe((data: State) => {
+      lsService.state$.subscribe((data: State) => {
         expect(data).toEqual({ Angular: 12, test: [1, 2, 3] });
         done();
       });

@@ -18,13 +18,13 @@ export class ProgressBarComponent implements OnChanges {
   @Input() value: string | number = 0;
   @Input() colored = false;
 
-  ngOnChanges() {
+  ngOnChanges(): void {
     this.value = this.value + '%';
   }
 
   get style(): { 'background-color': string, width: number | string } {
     let color = COLORS_MAP.blue;
-    let value = Number.parseInt(this.value as string);
+    const value = Number.parseInt(this.value as string, 10);
 
     if (this.colored) {
       if (value < 50) {

@@ -11,7 +11,7 @@ import { DebounceSearchComponent } from './debounce-search.component';
 class TestHostComponent {
   value = 'Test value';
 
-  onSearch(value: string) { }
+  onSearch(value: string): void { }
 }
 
 describe('DebounceSearchComponent', () => {

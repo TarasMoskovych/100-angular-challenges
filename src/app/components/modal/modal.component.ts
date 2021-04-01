@@ -16,22 +16,22 @@ import { fadeInOutAnimation } from 'src/app/shared/animations';
 export class ModalComponent {
   @Input() title = 'Default modal title';
   @Input() opened = false;
-  @Output() open = new EventEmitter<void>();
-  @Output() close = new EventEmitter<void>();
+  @Output() openModal = new EventEmitter<void>();
+  @Output() closeModal = new EventEmitter<void>();
 
   constructor(private cdr: ChangeDetectorRef) { }
 
-  closeModal(): void {
+  close(): void {
     this.toggle(false);
   }
 
-  openModal(): void {
+  open(): void {
     this.toggle(true);
   }
 
   private toggle(opened: boolean): void {
     this.opened = opened;
     this.cdr.markForCheck();
-    this[opened ? 'open' : 'close'].emit();
+    this[opened ? 'openModal' : 'closeModal'].emit();
   }
 }

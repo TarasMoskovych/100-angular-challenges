@@ -1,11 +1,11 @@
 <div class="modal">
-  <app-overlay *ngIf="opened" @fade-overlay (click)="closeModal()"></app-overlay>
+  <app-overlay *ngIf="opened" @fade-overlay (click)="close()"></app-overlay>
   <div *ngIf="opened" @fade-modal class="modal__wrapper">
     <div class="modal__title">
       <div class="modal__title-text">
         {{ title }}
       </div>
-      <div class="modal__title-close-icon" (click)="closeModal()">
+      <div class="modal__title-close-icon" (click)="close()">
         <i class="fas fa-times"></i>
       </div>
     </div>

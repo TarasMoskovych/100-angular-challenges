@@ -24,7 +24,7 @@ export class SortTableComponent implements OnChanges {
 
     this.data.sort((a: any, b: any) => {
       const current = this.asc ? a : b;
-      const next  = this.asc ? b : a
+      const next  = this.asc ? b : a;
       return current[key].localeCompare(next[key]);
     });
   }

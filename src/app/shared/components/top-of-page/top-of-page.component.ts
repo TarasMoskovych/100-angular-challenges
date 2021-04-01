@@ -9,14 +9,15 @@ import { Component, ChangeDetectionStrategy, Input, HostListener } from '@angula
 })
 export class TopOfPageComponent {
   @Input() offset = 100;
-  @HostListener('window:scroll')
-  onWindowScroll() {
-    this.toggleVisibility();
-  }
 
   visible = false;
 
   constructor(private viewportScroller: ViewportScroller) { }
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    this.toggleVisibility();
+  }
 
   onScrollToTop(): void {
     this.viewportScroller.scrollToPosition([0, 0]);

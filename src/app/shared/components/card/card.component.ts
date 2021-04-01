@@ -10,5 +10,5 @@ export class CardComponent {
   @Input() title: string;
   @Input() subtitle: string;
   @Input() icon: string;
-  @Input() color: string = '#40c980';
+  @Input() color = '#40c980';
 }

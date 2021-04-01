@@ -8,7 +8,7 @@ import { DebounceClickDirective } from './debounce-click.directive';
   template: `<button appDebounceClick (debouncedEvent)="onClick()">Click</button>`
 })
 class TestHostComponent {
-  onClick() {}
+  onClick(): void {}
 }
 
 describe('DebounceClickDirective', () => {

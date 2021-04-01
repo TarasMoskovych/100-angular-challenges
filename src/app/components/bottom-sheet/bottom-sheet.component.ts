@@ -26,9 +26,9 @@ const COLLAPSED = {
 })
 export class BottomSheetComponent {
   @Input() isOpened = false;
-  @Output() close = new EventEmitter<void>();
+  @Output() closeSheet = new EventEmitter<void>();
 
   onClose(): void {
-    this.close.emit();
+    this.closeSheet.emit();
   }
 }

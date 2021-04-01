@@ -32,9 +32,9 @@ const COLORS_MAP = {
 })
 export class RibbonComponent {
   @Input() configs: Ribbon = { location: RibbonLocation.TopRight, type: RibbonType.Success };
-  @Input() text: string = 'Default text';
+  @Input() text = 'Default text';
 
-  get colors(): Object {
+  get colors(): { 'background-color': string } {
     return {
       'background-color': COLORS_MAP[this.configs.type],
     };

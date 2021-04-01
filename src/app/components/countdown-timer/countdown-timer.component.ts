@@ -51,10 +51,10 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
     this.date = { seconds, minutes, hours, days };
 
     Object.keys(this.date).forEach((key: string) => {
-      let value = this.date[key];
+      const value = this.date[key];
 
-      if (value < 10) this.date[key] = '0' + value;
-      if (value < 0) this.date[key] = '00';
+      if (value < 10) { this.date[key] = '0' + value; }
+      if (value < 0) { this.date[key] = '00'; }
     });
 
     if (timeDifference < 0 && this.subscription) {

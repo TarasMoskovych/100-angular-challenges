@@ -13,8 +13,8 @@ describe('ComponentsComponent', () => {
   let component: ComponentsComponent;
   let fixture: ComponentFixture<ComponentsComponent>;
   let el: DebugElement;
-  let snackbarServiceSpy = { show: jest.fn() };
-  let userServiceSpy = { get: jest.fn().mockReturnValue(of(testUser)) };
+  const snackbarServiceSpy = { show: jest.fn() };
+  const userServiceSpy = { get: jest.fn().mockReturnValue(of(testUser)) };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

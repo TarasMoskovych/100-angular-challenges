@@ -11,7 +11,7 @@ export interface Pill {
   label: string;
   type?: PillType;
   selected?: boolean;
-  icon?: string
+  icon?: string;
 }
 
 export const COLORS_MAP = {
@@ -29,15 +29,15 @@ export const COLORS_MAP = {
 })
 export class PillComponent {
   @Input() pill: Pill = { label: 'Default label' };
-  @Output() select = new EventEmitter<Pill>();
+  @Output() selectPill = new EventEmitter<Pill>();
 
-  get color(): Object {
+  get color(): { 'background-color': string } {
     return {
       'background-color': COLORS_MAP[this.pill.type || 'info'],
     };
   }
 
   onSelect(pill: Pill): void {
-    this.select.emit(pill);
+    this.selectPill.emit(pill);
   }
 }

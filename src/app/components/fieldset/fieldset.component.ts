@@ -11,14 +11,14 @@ import { fadeInOutAnimation } from 'src/app/shared/animations';
   animations: [trigger('fade', fadeInOutAnimation(200, { opacity: 1, height: '*' }, { opacity: 0, height: 0 }))],
 })
 export class FieldsetComponent {
-  @Input() header: string = 'Default header';
+  @Input() header = 'Default header';
   @Input() expanded = true;
 
   onToggle(): void {
     this.expanded = !this.expanded;
   }
 
-  get icon(): Object {
+  get icon(): any {
     return {
       'fa-minus': this.expanded,
       'fa-plus': !this.expanded,

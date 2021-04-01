@@ -8,12 +8,12 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RichTextViewerComponent implements OnInit {
-  @Input() value: string = '';
+  @Input() value = '';
   html: SafeHtml;
 
   constructor(private sanitizer: DomSanitizer) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.updateHtml(this.value);
   }
 

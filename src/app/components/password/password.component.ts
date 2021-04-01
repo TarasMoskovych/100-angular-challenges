@@ -10,7 +10,7 @@ import { CustomValidators } from 'src/app/shared/validators';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PasswordComponent implements OnInit {
-  form:  FormGroup;
+  form: FormGroup;
   visible = false;
 
   ngOnInit(): void {
@@ -25,7 +25,7 @@ export class PasswordComponent implements OnInit {
     return this.visible ? 'text' : 'password';
   }
 
-  get icon(): Object {
+  get icon(): any {
     return {
       'fa-eye': !this.visible,
       'fa-eye-slash': this.visible,
@@ -50,7 +50,7 @@ export class PasswordComponent implements OnInit {
     if (!password.value.length) {
       status = 0;
     } else {
-      status +=1;
+      status += 1;
     }
 
     return status > 100 ? 100 : status;

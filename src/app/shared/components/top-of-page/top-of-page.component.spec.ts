@@ -28,13 +28,16 @@ describe('TopOfPageComponent', () => {
   });
 
   it('should scroll to top on click', () => {
+    // tslint:disable-next-line
     jest.spyOn(component['viewportScroller'], 'scrollToPosition');
     el.query(By.css('.top-of-page')).triggerEventHandler('click', null);
 
+    // tslint:disable-next-line
     expect(component['viewportScroller'].scrollToPosition).toHaveBeenCalledTimes(1);
   });
 
   it('should be visible while scrolling', () => {
+    // tslint:disable-next-line
     jest.spyOn(component['viewportScroller'], 'getScrollPosition').mockReturnValue([400, 400]);
     window.dispatchEvent(new Event('scroll'));
     fixture.detectChanges();

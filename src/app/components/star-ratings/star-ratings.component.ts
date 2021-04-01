@@ -14,7 +14,7 @@ export class StarRatingsComponent {
     return Array(Math.ceil(this.stars)).fill(undefined).map((value: number, idx: number) => idx);
   }
 
-  getState(n: number): Object {
+  getState(n: number): any {
     const fullStar = this.value / (n + 1) >= 1;
     const fas = this.value > n;
     return {

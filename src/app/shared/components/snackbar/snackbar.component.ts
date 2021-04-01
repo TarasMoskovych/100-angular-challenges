@@ -24,16 +24,18 @@ const COLLAPSED = {
   animations: [trigger('fade', fadeInOutAnimation(250, EXPANDED, COLLAPSED))],
 })
 export class SnackbarComponent implements OnInit {
-  @Input() message: string = 'Default message';
-  @Input() ms: number = 3000;
-  @Input() autoclose: boolean = true;
+  @Input() message = 'Default message';
+  @Input() ms = 3000;
+  @Input() autoclose = true;
   @Output() afterClosed = new EventEmitter<void>();
   shown = true;
 
   constructor(private cdr: ChangeDetectorRef) { }
 
-  ngOnInit() {
-    this.autoclose && this.onClose();
+  ngOnInit(): void {
+    if (this.autoclose) {
+      this.onClose();
+    }
   }
 
   close(): void {

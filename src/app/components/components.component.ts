@@ -33,10 +33,6 @@ export class ComponentsComponent implements OnInit {
     private usersService: UsersService,
   ) { }
 
-  ngOnInit() {
-    this.users$ = this.usersService.get();
-  }
-
   users$: Observable<User[]>;
   search = 'Search';
   checked = false;
@@ -52,7 +48,7 @@ export class ComponentsComponent implements OnInit {
   };
   quoteColors: QuoteColors = { background: '#E4F4E8', text: '#628E6D' };
 
-  richTextValue: string = `
+  richTextValue = `
     <div style="background: #E8ECF4; padding: 10px; color: #4060A0;">
       <h2>Heading</h2>
       <p style="margin-top: 10px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
@@ -149,6 +145,10 @@ export class ComponentsComponent implements OnInit {
     },
   ];
 
+  ngOnInit(): void {
+    this.users$ = this.usersService.get();
+  }
+
   onUpdate(): void {
     this.value = Math.ceil(Math.random() * 100);
   }
@@ -158,7 +158,7 @@ export class ComponentsComponent implements OnInit {
   }
 
   onToggleModal(toggler: boolean = false): void {
-    this.modal[toggler ? 'openModal' : 'closeModal']();
+    this.modal[toggler ? 'open' : 'close']();
   }
 
   onModalOpen(): void {

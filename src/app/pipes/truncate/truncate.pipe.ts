@@ -9,7 +9,7 @@ export class TruncatePipe implements PipeTransform {
     let newValue =  value.slice(0, length);
 
     if (value.length > length) {
-      newValue += '...'
+      newValue += '...';
     }
 
     return newValue;

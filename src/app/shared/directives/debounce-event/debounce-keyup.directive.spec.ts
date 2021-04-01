@@ -8,7 +8,7 @@ import { DebounceKeyupDirective } from './debounce-keyup.directive';
   template: `<input appDebounceKeyup (debouncedEvent)="onKeyup()">`
 })
 class TestHostComponent {
-  onKeyup() {}
+  onKeyup(): void {}
 }
 
 describe('DebounceKeyupDirective', () => {

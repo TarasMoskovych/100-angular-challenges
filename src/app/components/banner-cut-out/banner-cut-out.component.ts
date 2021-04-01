@@ -7,10 +7,10 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BannerCutOutComponent {
-  @Input() src: string = 'assets/img/back.jpg';
-  @Input() text: string = 'Default banner text';
+  @Input() src = 'assets/img/back.jpg';
+  @Input() text = 'Default banner text';
 
-  get background(): Object {
+  get background(): { 'background-image': string } {
     return {
       'background-image': `url(${this.src})`,
     };

@@ -33,7 +33,7 @@ describe('ModalComponent', () => {
     beforeEach(() => {
       component.opened = true;
       fixture.detectChanges();
-      jest.spyOn(component.close, 'emit');
+      jest.spyOn(component.closeModal, 'emit');
     });
 
     it('should be opened', () => {
@@ -44,14 +44,14 @@ describe('ModalComponent', () => {
       el.query(By.css('.modal__title-close-icon')).triggerEventHandler('click', null);
 
       expect(component.opened).toBeFalsy();
-      expect(component.close.emit).toHaveBeenCalled();
+      expect(component.closeModal.emit).toHaveBeenCalled();
     });
   });
 
   describe('closed', () => {
     beforeEach(() => {
       fixture.detectChanges();
-      jest.spyOn(component.open, 'emit');
+      jest.spyOn(component.openModal, 'emit');
     });
 
     it('should be closed', () => {
@@ -59,10 +59,10 @@ describe('ModalComponent', () => {
     });
 
     it('should open', () => {
-      component.openModal();
+      component.open();
 
       expect(component.opened).toBeTruthy();
-      expect(component.open.emit).toHaveBeenCalled();
+      expect(component.openModal.emit).toHaveBeenCalled();
     });
   });
 });

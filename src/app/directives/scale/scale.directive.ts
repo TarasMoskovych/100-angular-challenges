@@ -4,17 +4,6 @@ import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
   selector: '[appScale]'
 })
 export class ScaleDirective {
-  @HostListener('mouseover')
-  onMouseOver() {
-    this.styles.forEach((style: { name: string, value: string }) => {
-      this.renderer.setStyle(this.elementRef.nativeElement, style.name, style.value);
-    });
-  }
-
-  @HostListener('mouseout')
-  onMouseOut() {
-    this.renderer.removeStyle(this.elementRef.nativeElement, 'transform');
-  }
 
   constructor(
     private elementRef: ElementRef,
@@ -35,4 +24,16 @@ export class ScaleDirective {
       value: 'transform',
     },
   ];
+
+  @HostListener('mouseover')
+  onMouseOver(): void {
+    this.styles.forEach((style: { name: string, value: string }) => {
+      this.renderer.setStyle(this.elementRef.nativeElement, style.name, style.value);
+    });
+  }
+
+  @HostListener('mouseout')
+  onMouseOut(): void {
+    this.renderer.removeStyle(this.elementRef.nativeElement, 'transform');
+  }
 }

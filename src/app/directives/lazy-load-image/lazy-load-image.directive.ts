@@ -4,7 +4,7 @@ import { AfterViewInit, ChangeDetectorRef, Directive, ElementRef, HostBinding, I
   selector: 'img[appLazyLoadImage]'
 })
 export class LazyLoadImageDirective implements AfterViewInit, OnDestroy {
-  @Input('src') src: string;
+  @Input() src: string;
   @HostBinding('attr.src') srcAttr: string;
 
   private observer: IntersectionObserver;
@@ -20,7 +20,9 @@ export class LazyLoadImageDirective implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.observer && this.observer.disconnect();
+    if (this.observer) {
+      this.observer.disconnect();
+    }
   }
 
   private canLazyLoad(): boolean {

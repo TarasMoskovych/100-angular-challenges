@@ -19,7 +19,7 @@ describe('CopyDirective', () => {
     expect(directive).toBeTruthy();
   });
 
-  it('should copy text', async() => {
+  it('should copy text', async () => {
     jest.spyOn(navigator.clipboard, 'writeText').mockResolvedValue();
 
     directive.text = text;

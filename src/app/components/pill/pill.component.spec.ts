@@ -23,11 +23,11 @@ describe('PillComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should emit "select"', () => {
-    jest.spyOn(component.select, 'emit');
+  it('should emit "selectPill"', () => {
+    jest.spyOn(component.selectPill, 'emit');
 
     component.onSelect(component.pill);
-    expect(component.select.emit).toHaveBeenCalledWith(component.pill);
+    expect(component.selectPill.emit).toHaveBeenCalledWith(component.pill);
   });
 
   describe('color', () => {

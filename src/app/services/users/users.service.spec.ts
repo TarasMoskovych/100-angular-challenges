@@ -30,6 +30,7 @@ describe('UsersService', () => {
         expect(response).toEqual([testUser]);
       });
 
+    // tslint:disable-next-line
     const req = httpController.expectOne(service['url']);
     expect(req.request.method).toBe('GET');
     req.flush([testUser]);
@@ -44,6 +45,7 @@ describe('UsersService', () => {
         done();
       });
 
+    // tslint:disable-next-line
     const req = httpController.expectOne(`${service['url']}/1`);
     expect(req.request.method).toBe('GET');
     req.flush(testUser2);
@@ -56,6 +58,7 @@ describe('UsersService', () => {
         done();
       });
 
+    // tslint:disable-next-line
     const req = httpController.expectOne(`${service['url']}/1`);
     expect(req.request.method).toBe('GET');
     req.flush(testUser2);

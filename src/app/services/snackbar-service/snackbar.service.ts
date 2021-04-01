@@ -23,7 +23,7 @@ export class SnackbarService {
 
   private appendComponent(message: string, autoclose: boolean, ms: number): SnackbarComponent {
     // 1. Create a component reference from the component
-    let componentRef = this.componentFactoryResolver
+    const componentRef = this.componentFactoryResolver
       .resolveComponentFactory(SnackbarComponent)
       .create(this.injector);
 

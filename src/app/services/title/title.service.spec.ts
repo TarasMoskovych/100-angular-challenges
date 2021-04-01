@@ -34,7 +34,7 @@ describe('TitleService', () => {
             },
           },
         },
-      }
+      };
     });
 
     it('should set custom title when current title is different', () => {

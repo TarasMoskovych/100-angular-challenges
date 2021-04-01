@@ -10,7 +10,7 @@ export class SkeletonLoaderComponent {
   @Input() width = '100%';
   @Input() height = '100%';
 
-  get dimensions(): Object {
+  get dimensions(): { width: string, height: string } {
     return { width: this.width, height: this.height };
   }
 }
