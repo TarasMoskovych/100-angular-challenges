@@ -5,9 +5,9 @@
       <div class="modal__title-text">
         {{ title }}
       </div>
-      <div class="modal__title-close-icon" (click)="close()">
+      <button appAutoFocus class="modal__title-close-icon" (click)="close()">
         <i class="fas fa-times"></i>
-      </div>
+      </button>
     </div>
     <div class="modal__content">
       <ng-content select="[body]"></ng-content>

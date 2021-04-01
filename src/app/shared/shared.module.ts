@@ -15,6 +15,7 @@ import {
 } from './components';
 
 import {
+  AutoFocusDirective,
   DebounceClickDirective,
   DebounceKeyupDirective,
 } from './directives';
@@ -34,6 +35,7 @@ import {
     SnackbarComponent,
     ToolbarComponent,
     TopOfPageComponent,
+    AutoFocusDirective,
     DebounceClickDirective,
     DebounceKeyupDirective,
     FilterTermPipe,
@@ -55,6 +57,7 @@ import {
     SnackbarComponent,
     ToolbarComponent,
     TopOfPageComponent,
+    AutoFocusDirective,
     DebounceClickDirective,
     DebounceKeyupDirective,
     FilterTermPipe,
