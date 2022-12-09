@@ -33,6 +33,8 @@ export class ComponentsComponent implements OnInit {
     private usersService: UsersService,
   ) { }
 
+  countdownTime = `Jan 01 ${new Date().getFullYear() + 1} 00:00:00`;
+
   users$: Observable<User[]>;
   search = 'Search';
   checked = false;
@@ -175,7 +177,7 @@ export class ComponentsComponent implements OnInit {
   }
 
   onCountDownFinish(): void {
-    this.snackbarService.show('Happy New 2022 Year!', false);
+    this.snackbarService.show('Happy New Year!', false);
   }
 
   onToggleBottomSheet(opened: boolean): void {

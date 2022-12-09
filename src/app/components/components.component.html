@@ -52,7 +52,7 @@
 </div>
 
 <app-card class="wrapper" title="Countdown Timer" subtitle="Components">
-  <app-countdown-timer body time="Jan 01 2022 00:00:00" (finish)="onCountDownFinish()"></app-countdown-timer>
+  <app-countdown-timer body [time]="countdownTime" (finish)="onCountDownFinish()"></app-countdown-timer>
 </app-card>
 
 <app-card class="wrapper" title="Counter" subtitle="Components">
